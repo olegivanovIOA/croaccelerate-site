@@ -172,7 +172,7 @@
       sendLead(data).then(function () {
         dl({ event: "generate_lead", form_name: data.form_name, lead_type: data.lead_type, company_size: data.company_size || "", interest: data.interest || "" });
         if (form.hasAttribute("data-redirect")) { location.href = form.getAttribute("data-redirect"); return; }
-        if (msg) { msg.className = "form-msg ok"; msg.textContent = "Thank you — I'll reply within one business day."; }
+        if (msg) { msg.className = "form-msg ok"; msg.textContent = "Thank you — we'll reply within one business day."; }
         form.reset();
       }).catch(function () {
         if (msg) { msg.className = "form-msg err"; msg.innerHTML = "Something went wrong. Please email <a href=\"mailto:" + (CFG.email || "") + "\">" + (CFG.email || "me") + "</a>."; }

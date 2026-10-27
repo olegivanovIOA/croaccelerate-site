@@ -5,7 +5,7 @@
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/cases/">Cases</a> / {{ c.short }}</nav>
     <span class="pill reveal"><b>{{ c.badge }}</b> {{ c.industry }} · anonymised (NDA)</span>
-    <h1 class="reveal" style="font-size:clamp(2rem,4.6vw,3.4rem);max-width:22ch">{{ c.title }}</h1>
+    <h1 class="reveal" style="font-size:clamp(2rem,4.2vw,3.1rem);max-width:32ch">{{ c.title }}</h1>
     <div class="grid g3 reveal" style="margin-top:28px">
       {% for v, l in c.metrics %}<div class="glass stat" style="padding:20px"><b style="font-size:2rem">{{ v }}</b><span>{{ l }}</span></div>{% endfor %}
     </div>
@@ -17,13 +17,23 @@
     <div class="glass reveal" style="padding:22px 26px">
       <div class="grid g3">
         <div><p class="eyebrow mb0">Client</p><p class="mb0">{{ c.client }}</p></div>
-        <div><p class="eyebrow mb0">My role</p><p class="mb0">{{ c.role }}</p></div>
+        <div><p class="eyebrow mb0">Our role</p><p class="mb0">{{ c.role }}</p></div>
         <div><p class="eyebrow mb0">Timeline</p><p class="mb0">{{ c.duration }}</p></div>
       </div>
     </div>
   </div>
 </section>
 
+{% if c.scope %}
+<section class="sp-top">
+  <div class="wrap">
+    <p class="eyebrow">Scope</p>
+    <div class="scope-grid">
+      {% for v, l in c.scope %}<div class="scope-tile"><b>{{ v }}</b><span>{{ l }}</span></div>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
 <section class="sp-top">
   <div class="wrap prose">
     <h2>The challenge</h2>
@@ -37,6 +47,19 @@
       {% endfor %}
     </div>
   </div>
+  {% if c.integrations %}
+  <div class="wrap" style="max-width:1080px;margin-top:48px">
+    <div class="sec-head"><p class="eyebrow">Integrations & stack</p><h2>What we connected</h2></div>
+    <div class="grid g3">
+      {% for g, items in c.integrations %}
+      <div class="glass card integ"><h3>{{ g }}</h3><ul>{% for it in items %}<li>{{ it }}</li>{% endfor %}</ul></div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% if c.slug in diagrams %}
+  <div class="wrap" style="max-width:1080px;margin-top:56px"><div class="sec-head"><p class="eyebrow">How it fits together</p><h2>{{ diagrams[c.slug] }}</h2></div>{% include "diagrams/" ~ c.slug ~ ".html" %}</div>
+  {% endif %}
   {% if c.mock %}
   <div class="wrap" style="max-width:1080px;margin-top:56px">{% include "_dash_mock.html" %}</div>
   {% endif %}
@@ -60,7 +83,7 @@
   </div>
 </section>
 
-{{ cta_band(cfg, title="Want the same clarity in your company?", text="Tell me where you are today. I'll tell you honestly what I'd do first — and whether it needs me.", id="case_" ~ c.slug) }}
+{{ cta_band(cfg, title="Want the same clarity in your company?", text="Tell us where you are today. We'll tell you honestly what we'd do first — and whether it needs us.", id="case_" ~ c.slug) }}
 
 <section class="sp-top">
   <div class="wrap">

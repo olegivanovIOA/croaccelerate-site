@@ -44,16 +44,16 @@ SERVICES = [
             ("Team enablement", "AI usage policy, training for managers and champions inside each department."),
         ],
         "formats": [
-            ("Innovation Diagnostic", "2–3 weeks", "Interviews, data & process audit, opportunity map and a prioritised roadmap. A fixed-scope way to start."),
+            ("Innovation Diagnostic", "1–2 weeks", "Interviews, data & process audit, opportunity map and a prioritised roadmap — with a first dashboard version already in week one."),
             ("Fractional CINO", "1–2 days / week", "Ongoing ownership of the roadmap, delivery oversight and hands-on building. Minimum three months."),
             ("Advisory seat", "monthly", "Board-level guidance for leadership teams that already have delivery capacity."),
         ],
         "outcomes": ["Fewer manual hours in reporting and coordination", "Decisions on live data instead of last month's spreadsheet", "AI that is used weekly, not demoed once", "A roadmap the board can read"],
         "faq": [
             ("What does a Fractional Chief Innovation Officer actually do?", "The same job as a full-time CINO — owning the innovation, AI and digital-operations agenda — but for one or two days a week. In practice that means setting priorities, building or overseeing the first systems, and making sure the rest of the company adopts them."),
-            ("How is this different from hiring an AI agency?", "An agency sells projects. A fractional executive owns outcomes across projects: what to build, what to skip, which vendor to use and how the team will run it after go-live. I also build hands-on, so there's no hand-off gap."),
-            ("How fast will we see results?", "The diagnostic produces a roadmap in 2–3 weeks. The first dashboard or agent typically reaches real users within 4–8 weeks."),
-            ("Do you work with companies outside Ukraine and Eastern Europe?", "Yes. I work remotely with companies in the EU, UK and US, and travel for workshops when it matters."),
+            ("How is this different from hiring an AI agency?", "An agency sells projects. A fractional executive owns outcomes across projects: what to build, what to skip, which vendor to use and how the team will run it after go-live. We also build hands-on, so there's no hand-off gap."),
+            ("How fast will we see results?", "Fast. A first version of your live management dashboard within the first week, a first working AI agent in 3 working days, and a prioritised roadmap within 1–2 weeks."),
+            ("Do you work with companies outside Ukraine and Eastern Europe?", "Yes. We work remotely with companies in the EU, UK and US, and travel for workshops when it matters."),
         ],
     },
     {
@@ -67,7 +67,7 @@ SERVICES = [
         "seo_desc": "Custom AI agents for sales research, lead qualification, reporting, content/SEO and operations — built on your data, with guardrails, human review and measurable KPIs.",
         "h1": "AI agents",
         "h1_em": "that do real work in your systems",
-        "lead": "Most AI pilots stall because nobody owns them and they don't touch real data. I design agents around a measurable job, connect them to your CRM, analytics, documents and spreadsheets, and roll them out with a human in the loop until they earn trust.",
+        "lead": "Most AI pilots stall because nobody owns them and they don't touch real data. We design agents around a measurable job, connect them to your CRM, analytics, documents and spreadsheets, and roll them out with a human in the loop until they earn trust.",
         "for_whom": [
             "Teams drowning in repetitive research, reporting or data entry",
             "Sales and marketing teams that need faster, better-qualified pipeline",
@@ -89,9 +89,10 @@ SERVICES = [
             ("Content & SEO agent", "Tracks search performance, proposes topics and drafts articles for review."),
             ("Operations agent", "Moves data between systems, reconciles mismatches, alerts on gaps."),
             ("Document agent", "Extracts, checks and files invoices, specs or contracts."),
+            ("Finance agent", "Builds cash flow, P&L and balance sheet, explains variances and prepares the management toolkit."),
         ],
         "formats": [
-            ("Agent Sprint", "3–4 weeks", "One agent from spec to production with a measurable KPI."),
+            ("Agent Sprint", "3 working days", "A first working agent on your real data in 3 working days, then hardened with your team to production with a measurable KPI."),
             ("Agent Program", "2–6 months", "A portfolio of agents prioritised by ROI, usually as part of a Fractional CINO engagement."),
         ],
         "outcomes": ["Hours returned to the team every week", "Faster response to leads and customers", "Fewer copy-paste errors", "AI usage you can audit"],
@@ -127,11 +128,11 @@ SERVICES = [
             ("Governance", "Roles, permissions, audit logs, cost limits and a monthly review."),
         ],
         "formats": [
-            ("AI Office Blueprint", "2 weeks", "Map of roles, data, tools, risks and a staged rollout plan."),
-            ("AI Office Build", "6–12 weeks", "Coordinator plus two to four role agents in production."),
+            ("AI Office Blueprint", "1 week", "Map of roles, data, tools, risks and a staged rollout plan."),
+            ("AI Office Build", "3–6 weeks", "Coordinator plus two to four role agents in production."),
         ],
         "outcomes": ["One place where requests go and get done", "Agents that share context instead of starting from zero", "Management visibility into what AI is doing", "Capacity that scales without headcount"],
-        "dogfood": "I run my own AI Office: a coordinator plus agents for marketing & SEO, research and finance analysis. This website's content pipeline is managed by one of them — every article is still reviewed and approved by me.",
+        "dogfood": "We run our own AI Office: an Office Secretary coordinating seven specialist agents — growth, finance, research, signal monitoring and three key-account agents — each on the AI model that fits its job. This website's content pipeline is managed by one of them; every article is still approved by a human.",
         "faq": [
             ("How is an AI Office different from ChatGPT Teams or Copilot?", "Those are tools individuals use. An AI Office is a system: agents with jobs, schedules, data connections and owners, producing outputs whether or not someone remembers to open a chat."),
             ("Where does it run?", "In your own cloud and repositories — GitHub Actions, a small server or your existing platform — with model access via API keys you own."),
@@ -148,7 +149,7 @@ SERVICES = [
         "seo_desc": "Automated management dashboards: KPI registry, hourly data pipelines from CRM, production and finance systems, and an ERP roadmap — without a big-bang IT project.",
         "h1": "Digital Control Tower",
         "h1_em": "your company, live",
-        "lead": "Before AI can help you decide, the numbers have to be right and on time. I build a KPI registry, connect your CRM, production, marketing and finance sources with automated pipelines and deliver dashboards that refresh themselves — then plan the ERP path without a big-bang migration.",
+        "lead": "Before AI can help you decide, the numbers have to be right and on time. We build a KPI registry, connect your CRM, production, marketing and finance sources with automated pipelines and deliver dashboards that refresh themselves — then plan the ERP path without a big-bang migration.",
         "for_whom": [
             "Leadership teams that wait days for numbers that disagree with each other",
             "Multi-site or multi-entity companies consolidating data by hand",
@@ -163,7 +164,7 @@ SERVICES = [
             ("Team ownership", "Documentation and a data owner per domain."),
         ],
         "formats": [
-            ("Control Tower MVP", "4–6 weeks", "Registry, three to five data sources and the CEO view."),
+            ("Control Tower MVP", "1 week", "A first version of the live dashboard in the first week: registry, three to five data sources and the CEO view."),
             ("Full Control Tower", "3–4 months", "All domains, alerts and the ERP decision."),
         ],
         "outcomes": ["Same number, same answer, every time", "KPIs refreshed hourly instead of monthly", "Problems spotted in days, not quarters", "A foundation agents can safely act on"],
@@ -183,7 +184,7 @@ SERVICES = [
         "seo_desc": "Fractional Chief Commercial Officer: ICP, pipeline architecture, closed-loop marketing attribution, ROMI by margin and sales KPIs for B2B and IT services companies.",
         "h1": "Revenue Engine",
         "h1_em": "fractional commercial leadership",
-        "lead": "Two decades of building B2B sales and marketing engines — including twelve years leading business development for one of Eastern Europe's largest IT services companies. I connect marketing, CRM and finance so every euro of spend traces to revenue and margin, then build the sales rhythm on top.",
+        "lead": "Two decades of building B2B sales and marketing engines — including twelve years of our founder leading business development for one of Eastern Europe's largest IT services companies. We connect marketing, CRM and finance so every euro of spend traces to revenue and margin, then build the sales rhythm on top.",
         "for_whom": [
             "B2B and IT services companies entering or scaling in EU / US markets",
             "Founders still running sales personally",
@@ -198,12 +199,12 @@ SERVICES = [
             ("Sales team KPIs", "Activity-to-outcome metrics, coaching cadence, compensation logic."),
         ],
         "formats": [
-            ("Revenue Diagnostic", "2 weeks", "Funnel, attribution and pipeline audit with a prioritised fix list."),
+            ("Revenue Diagnostic", "1–2 weeks", "Funnel, attribution and pipeline audit with a prioritised fix list."),
             ("Fractional CCO", "1–2 days / week", "Ongoing commercial leadership, minimum three months."),
         ],
         "outcomes": ["Spend you can defend line by line", "A forecast leadership believes", "Shorter time from lead to first reply", "Sales that don't depend on the founder"],
         "faq": [
-            ("Is this only for IT companies?", "No. The method works for any B2B business with a CRM and a sales team; IT services is where I spent the longest, manufacturing is where I operate today."),
+            ("Is this only for IT companies?", "No. The method works for any B2B business with a CRM and a sales team; IT services is where our founder spent the longest, manufacturing is where we operate today."),
         ],
     },
 ]
@@ -222,6 +223,8 @@ CASES = [
         "duration": "Built from zero in 2025–2026, developed continuously",
         "badge": "Data & Ops",
         "metrics": [("2", "live dashboards, one per company"), ("168", "KPIs in one registry · 81% automated"), ("Hourly", "refresh from 10+ data sources")],
+        "scope": [('2', 'companies, one data contour'), ('8', 'departments covered'), ('9', 'management domains'), ('168', 'metrics in one registry'), ('20+', 'live data integrations'), ('15+', 'scheduled data jobs, hourly')],
+        "integrations": [('Operations & ERP layer', ['Self-built production system (ERP/MES-like) via REST API: capacity, lots, defects, shift staffing', 'Shift production journals for every line', 'Automated material write-offs and warehouse assignment in the CRM', 'ERP roadmap: scored decision between Odoo and a custom data layer']), ('CRM & sales', ['Two CRM portals via REST API and webhooks: every pipeline, deal and loss reason', 'Call tracking feeding calls into the CRM', 'Customer analytics: LTV, cohorts, RFM, churn, at-risk']), ('Marketing & analytics', ['Google Analytics 4 (two properties) via Data API', 'Three Google Ads accounts', 'Social ads pipeline', 'Unified UTM and campaign-naming rules']), ('Finance & reporting', ['Cash flow, P&L and balance sheet generators', 'Bank statements from several legal entities', 'Ratios-only management view, two dashboard editions', 'Encrypted read-only report for external contractors']), ('Databases & documents', ['Google Sheets and Docs as the operational layer', 'Versioned JSON data layer in Git', 'Planned common data layer on PostgreSQL (raw → core → marts)']), ('AI & LLM', ['LLM-assisted build of pipelines, parsers and dashboards', 'AI agents for content, research and analysis in our own AI Office'])],
         "challenge": "The group grew from a single workshop into two companies with several production sites, hundreds of employees, a wholesale and a retail channel and an export market. Management information did not grow with it: production lived in shift journals, sales in a CRM, marketing in three ad accounts, money in bank statements, people in HR sheets, strategy in slide decks. Weekly numbers took days to compile, reports disagreed with each other, and nobody could say which metrics were reliable. The founders were steering a fast-moving business through the rear-view mirror.",
         "approach": [
             ("Metrics before dashboards", "Before drawing a single chart, every management metric went into a registry: owner, formula, source, refresh frequency and automation status. 168 metrics across nine domains. The share of metrics that are fully automated became a KPI of its own — reviewed like revenue."),
@@ -270,6 +273,8 @@ CASES = [
         "duration": "8 weeks to the first full view, continuous since",
         "badge": "Revenue",
         "metrics": [("4", "ad accounts joined to CRM revenue"), ("2 lenses", "ROMI by revenue and by margin"), ("100%", "match with a manual lead audit")],
+        "scope": [('4', 'ad accounts and channels'), ('4', 'CRM pipelines incl. screening'), ('2', 'analytics properties'), ('10+', 'revenue metrics: ROMI, ROAS, CPL, CAC, LTV…'), ('Hourly', 'attribution refresh'), ('100%', 'match with manual audit')],
+        "integrations": [('CRM & sales', ['CRM REST API: all pipelines, stages, decline reasons, deal sizes', 'Call tracking connected to CRM deals', 'Customer first-touch attribution and reactivation tracking']), ('Marketing & analytics', ['GA4 Data API (two properties) for traffic and ad cost', 'Three Google Ads accounts with tracking templates', 'Meta Ads API pipeline', 'Rule engine (JSON) classifying marketing vs non-marketing leads']), ('Reporting', ['Sortable campaign ROI table with daily drill-down', 'Status rules flagging spend with no CRM leads', 'AES-encrypted performance page for SEO contractors']), ('Data & tools', ['Python data jobs on a scheduler', 'Google Sheets as the shared rules and planning layer'])],
         "challenge": "Marketing reported clicks and leads, sales reported deals, finance reported cash — and nobody could say which campaign produced profitable customers. Paid spend was significant, the link between ad platforms and the CRM was incomplete, and a previous reporting setup had quietly stopped updating.",
         "approach": [
             ("Audit the plumbing first", "Traced campaign tags from ad click to CRM deal. The largest ad account passed no campaign identifier into the CRM at all — most paid leads were unattributable. Some campaigns wrote IDs instead of names; others had no final-URL tagging."),
@@ -292,8 +297,8 @@ CASES = [
     },
     {
         "slug": "multi-entity-finance-automation",
-        "short": "Finance automation across legal entities",
-        "title": "Cash flow, P&L and balance sheet on autopilot across several legal entities",
+        "short": "Finance agent: CF, P&L and balance sheet",
+        "title": "A finance agent that builds cash flow, P&L and balance sheet — with analytics and a management toolkit",
         "seo_title": "Case: Automated Cash Flow, P&L and Balance Sheet for a Multi-Entity Company | CRO Accelerate",
         "seo_desc": "How a growing manufacturer automated a 16-section cash-flow model, P&L and balance sheet across several legal entities and a cash desk — with management ratios shared safely.",
         "industry": "Manufacturing",
@@ -302,16 +307,20 @@ CASES = [
         "duration": "4 months to the full cycle, iterated since",
         "badge": "Finance",
         "metrics": [("16", "section cash-flow model, daily view"), ("3", "statements from one data layer"), ("0", "raw amounts in shared dashboards")],
+        "scope": [('5', 'money sources: entities + cash desk'), ('16', 'cash-flow sections'), ('3', 'statements from one layer'), ('Daily', 'cash breakdown'), ('10+', 'management ratios'), ('0', 'raw amounts in shared views')],
+        "integrations": [('Finance sources', ['Bank statements of every legal entity', 'Cash desk register', "Bookkeeper's balance sheet as an auxiliary reconciliation source"]), ('Finance & reporting', ['Cash-flow generator by month and by day', 'P&L generator with matching principle', 'Balance sheet generator with liabilities and reconciliation lines', 'Ratios fed into the live management dashboards']), ('Databases & documents', ['Google Sheets with cross-file imports as the transaction layer', 'Google Apps Script automation, Python for the dashboard feed']), ('AI & management toolkit', ['Finance agent: builds CF, P&L and balance sheet every month', 'Variance analysis with plain-language commentary for leadership', 'Toolkit: margins, cost structure, cash runway, tax and logistics share, reconciliation flags'])],
         "challenge": "Money moved through several legal entities and a cash desk, each with its own bank statements and spreadsheets. Month-end meant copying, reconciling and arguing about double counting. The P&L did not match production numbers, and the balance sheet was a separate manual exercise nobody fully trusted.",
         "approach": [
             ("One transaction layer", "Every entity's statements flow into one normalised transactions table, with cleaned sources and categories; months and years are generated automatically as the business grows."),
             ("Cash flow, daily", "A 16-section cash-flow model with a daily breakdown per entity and source, rebuilt by script for any month; overlapping sources are designed so the same payment can never be counted twice."),
             ("P&L that matches operations", "Cost of goods is based on volume actually sold (the matching principle), so finance and production finally report the same reality; new entities plug in as they open."),
             ("Balance sheet generator", "Built from the same layer: taxes and staff bonus funds carried as liabilities, retained earnings tied to the P&L, reconciliation lines wherever sources disagree."),
+            ("A finance agent on top", "The agent assembles the monthly cash flow, P&L and balance sheet, checks them against each other, explains what moved and why, and prepares the management toolkit: ratios, cost structure, runway, variances and reconciliation flags."),
             ("Safe management view", "The live dashboards show ratios — margin, EBITDA, cost structure, tax and logistics share, cash conversion, runway in months — while raw amounts stay in the private finance layer."),
         ],
         "results": [
             "Month-end consolidation became a scripted rebuild instead of a manual project.",
+            "Leadership receives the three statements together with the agent's analysis — what changed, why, and what needs a decision.",
             "Double counting between entities was designed out, not caught by eye.",
             "Finance became one of the domains feeding the live dashboards — the founders see the money in the same place as production and sales.",
         ],
@@ -331,6 +340,8 @@ CASES = [
         "duration": "6 weeks of analysis · expansion ongoing",
         "badge": "Strategy",
         "metrics": [("~160K", "relevant import records analysed"), ("94%", "of import value from the top 5 countries"), ("≈2×", "price gap raw vs finished goods")],
+        "scope": [('10', 'monthly customs files, 150–220 MB each'), ('~160K', 'relevant records'), ('3', 'market segments'), ('200+', 'importers mapped'), ('1', 'desktop analysis app'), ('1', 'EU market entered')],
+        "integrations": [('Data processing', ['Streaming reader for huge .xlsb spreadsheets', 'Fuzzy column matching across inconsistent monthly formats', 'Merging of several analysis runs into one dataset']), ('Reporting', ['Monthly trends, price per kg, top countries and importers by segment', '19-page PDF market report for partners']), ('Go-to-market', ['Pricing and vertical-integration business case', 'English commercial proposals and a trade-show landing page', 'Structured follow-up of industrial leads'])],
         "challenge": "The business wanted to know who really supplied its market, at what prices and through which importers — and whether to invest further upstream into its own materials. The only complete source was national customs statistics: ten monthly files of 150–220 MB each, with column names that changed from month to month.",
         "approach": [
             ("Tooling for messy data", "Built a desktop app that splits huge spreadsheets into parts, streams them without loading everything into memory, matches columns fuzzily across inconsistent monthly formats and merges results from several runs."),
@@ -351,7 +362,7 @@ CASES = [
 ]
 
 SEAMS = [
-    ("Every department hits its KPI — and the company misses its number.", "Targets are set per function, results are paid for by the whole business. I look at where one team's responsibility ends and who pays for its result next."),
+    ("Every department hits its KPI — and the company misses its number.", "Targets are set per function, results are paid for by the whole business. We look at where one team's responsibility ends and who pays for its result next."),
     ("Savings in one place, losses in another.", "Cheaper procurement that raises defect cost; marketing that brings leads sales cannot close. The numbers are right — the system is wrong."),
     ("A model that is correct and still wrong.", "A financial model or plan can be mathematically flawless and no longer describe the real business. Live data keeps it honest."),
     ("Decisions get re-discussed instead of executed.", "When facts arrive late, every meeting reopens the question and the owner keeps manual control. A shared live view ends that loop."),
@@ -359,8 +370,17 @@ SEAMS = [
 
 HOME_FAQ = [
     ("What is a Fractional Chief Innovation Officer?", "A senior executive who owns your AI, data and digital-operations agenda part-time — typically one or two days a week. You get C-level ownership and hands-on delivery without a full-time hire."),
-    ("Do you advise or build?", "Both. I set the roadmap with leadership and personally build the first dashboards and agents, then hand them over to your team with documentation."),
+    ("Do you advise or build?", "Both. We set the roadmap with leadership and build the first dashboards and agents ourselves, then hand them over to your team with documentation."),
     ("What size of company do you work with?", "Mostly founder-led companies with 50–500 people in manufacturing, distribution, B2B services and IT services, in the EU, UK and US."),
     ("How do you protect our data?", "Everything runs in your accounts. NDAs by default, least-privilege access, no personal data in shared views, and nothing goes into public AI training."),
-    ("How do we start?", "Book a 30-minute call. If there's a fit, we begin with a fixed-scope 2–3 week Innovation Diagnostic that ends with a prioritised roadmap."),
+    ("How do we start?", "Book a 30-minute call. If there's a fit, we begin with a fixed-scope 1–2 week Innovation Diagnostic — you see a first dashboard version in week one and a prioritised roadmap at the end."),
 ]
+
+
+# ---------------------------------------------------------------- additions (Oct 27)
+from content_extra import NEW_ICONS, CHATBOTS, PROJECT_ASSISTANTS, AI_OFFICE_CASE  # noqa: E402
+ICONS.update(NEW_ICONS)
+_order = {s["slug"]: s for s in SERVICES}
+SERVICES = [_order["fractional-chief-innovation-officer"], _order["ai-agents"], CHATBOTS, _order["ai-office"],
+            PROJECT_ASSISTANTS, _order["digital-control-tower"], _order["revenue-engine"]]
+CASES.insert(1, AI_OFFICE_CASE)

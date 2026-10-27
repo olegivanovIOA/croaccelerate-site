@@ -8,7 +8,7 @@ excerpt: Most mid-market companies don't need a full-time innovation executive. 
 status: publish
 ---
 
-Every leadership team I talk to in 2026 says some version of the same sentence: *"We know AI matters, we've tried a few things, but nobody really owns it."*
+Every leadership team we talk to in 2026 says some version of the same sentence: *"We know AI matters, we've tried a few things, but nobody really owns it."*
 
 That gap — between knowing and owning — is exactly what a **Fractional Chief Innovation Officer** (fractional CINO) fills. This guide explains what the role covers, how it differs from the alternatives, what the first 90 days look like, and how to tell whether your company needs one.
 
@@ -42,7 +42,7 @@ In practice, the scope usually covers five areas.
 
 **1. The innovation and AI roadmap.** A 12-month plan where every initiative is scored by business impact, effort and risk, with a short list of quick wins and two or three strategic bets.
 
-**2. A single source of truth.** AI can't help you decide if the numbers are wrong. Most of my engagements start by building a KPI registry — every metric with owner, formula, source and automation status — and live dashboards that refresh themselves. Automation coverage of that registry becomes a KPI in its own right.
+**2. A single source of truth.** AI can't help you decide if the numbers are wrong. Most of our engagements start by building a KPI registry — every metric with owner, formula, source and automation status — and live dashboards that refresh themselves. Automation coverage of that registry becomes a KPI in its own right.
 
 **3. AI agents in production.** Not demos: agents with a defined job, access to the right systems, guardrails, a human-in-the-loop and a measurable outcome. Typical first candidates are reporting, lead qualification, account research and data reconciliation.
 
@@ -54,9 +54,9 @@ In practice, the scope usually covers five areas.
 
 A typical engagement follows a predictable arc.
 
-**Weeks 1–3 — Diagnose.** Interviews with leadership and key teams; audit of data sources, systems and recurring manual work; an opportunity map. The output is a prioritised roadmap, not a slide deck of possibilities.
+**Week 1 — Diagnose and first dashboard.** Interviews with leadership and key teams; audit of data sources, systems and recurring manual work. By the end of the first week there is already a first version of a live management dashboard on real data — and a first working AI agent can be running within 3 working days.
 
-**Weeks 4–8 — First wins.** One live management dashboard on reliable data and one AI agent in production on a clearly measurable job. These prove the approach and create internal momentum.
+**Weeks 2–8 — First wins.** The prioritised roadmap, the dashboard hardened and extended across departments, and agents moved into daily use on clearly measurable jobs. These prove the approach and create internal momentum.
 
 **Weeks 9–12 — Operating rhythm.** OKRs for the innovation agenda, a weekly review, an owner for each initiative, and the next wave of builds selected by data, not by who shouted loudest.
 
@@ -82,6 +82,6 @@ Honesty matters here. A fractional role is **not** the right fit when:
 
 ## How to start
 
-The lowest-risk entry point is a fixed-scope **Innovation Diagnostic** of two to three weeks. It ends with a prioritised roadmap you can execute with or without further help.
+The lowest-risk entry point is a fixed-scope **Innovation Diagnostic** of one to two weeks, with a first dashboard version in week one. It ends with a prioritised roadmap you can execute with or without further help.
 
-If you'd like to benchmark your company first, take the free [AI Readiness Scorecard](/ai-readiness/) — twelve questions, four minutes, a score across strategy, data, automation and people. Or [book a 30-minute call](https://calendly.com/ioa4/30min) and tell me where you are today.
+If you'd like to benchmark your company first, take the free [AI Readiness Scorecard](/ai-readiness/) — twelve questions, four minutes, a score across strategy, data, automation and people. Or [book a 30-minute call](https://calendly.com/ioa4/30min) and tell us where you are today.

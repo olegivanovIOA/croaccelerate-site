@@ -1,0 +1,131 @@
+"""New services (chatbots, project assistants) and the AI Office case. Merged into content.py by build-time import."""
+
+NEW_ICONS = {
+    "chat": '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9.5h8M8 12.5h5"/></svg>',
+    "gantt": '<svg viewBox="0 0 24 24"><path d="M3 5h18M3 19h18"/><rect x="5" y="8" width="8" height="2.5" rx="1"/><rect x="9" y="12" width="9" height="2.5" rx="1"/><rect x="7" y="15.5" width="5" height="2" rx="1"/></svg>',
+}
+
+CHATBOTS = {
+    "slug": "chatbots",
+    "icon": "chat",
+    "name": "Chatbots in 2–3 days",
+    "short": "Chatbots",
+    "badge": "Fast",
+    "teaser": "Trade-show, HR, PR and sales bots live in 2–3 days — on your data, in Telegram, WhatsApp or on your website.",
+    "seo_title": "Business Chatbots in 2–3 Days: Trade Shows, HR, PR, Sales | CRO Accelerate",
+    "seo_desc": "Custom AI chatbots launched in 2–3 days for trade shows, HR, PR and sales: lead capture, screening, FAQs and meeting booking in Telegram, WhatsApp or your website.",
+    "h1": "Chatbots in 2–3 days",
+    "h1_em": "for the moments that matter",
+    "lead": "A trade show next week, a hiring wave, a product launch, a sales team drowning in the same questions — these don't wait for a six-month IT project. We launch focused AI chatbots on your own content in 2–3 days, connected to your CRM or a simple sheet, with a human taking over whenever it matters.",
+    "for_whom": [
+        "Companies exhibiting at trade shows and conferences",
+        "HR teams running hiring waves or onboarding",
+        "PR and marketing teams handling launches and media requests",
+        "Sales teams answering the same questions dozens of times a day",
+    ],
+    "deliverables": [
+        ("Trade-show bot", "Qualifies visitors at the stand, books meetings, sends materials and starts the follow-up the same evening."),
+        ("HR bot", "Screens candidates with your questions, answers FAQs, schedules interviews and guides new hires through onboarding."),
+        ("PR bot", "Shares the press kit, answers media questions with approved facts and routes interview requests."),
+        ("Sales bot", "Answers product, price-range and lead-time questions, qualifies the lead and hands it to the CRM."),
+        ("Your channels", "Telegram, WhatsApp, a website widget or a QR code on the stand — wherever your audience already is."),
+        ("Handover & data", "Every conversation lands in your CRM or Google Sheet; a person can step in at any moment."),
+    ],
+    "formats": [
+        ("Event bot", "2–3 days", "One bot for one event or campaign, live before the doors open."),
+        ("Team bot", "3–5 days", "HR, PR or sales bot connected to your CRM or sheets, with handover rules."),
+        ("Bot portfolio", "ongoing", "Several bots sharing one knowledge base, reviewed and improved monthly."),
+    ],
+    "outcomes": ["Every stand visitor captured and followed up", "Faster replies to candidates and leads", "Teams freed from repeated questions", "Conversations as data, not lost chats"],
+    "faq": [
+        ("Can a useful bot really be built in 2–3 days?", "Yes, when it has one clear job and approved content. We start from a template, load your materials, test it with your team on day two and go live on day three."),
+        ("Which AI does the bot use?", "The model that fits the job and your data policy. Bots answer from your approved content and say so when they don't know, instead of inventing answers."),
+    ],
+}
+
+PROJECT_ASSISTANTS = {
+    "slug": "project-assistants",
+    "icon": "gantt",
+    "name": "AI Project Assistants",
+    "short": "Project Assistants",
+    "badge": "Ops",
+    "teaser": "Assistants that run the routine of every project: Gantt, tasks, resources, risk checks, project cash flow and P&L, weekly digests.",
+    "seo_title": "AI Project Assistants: Automated Gantt, Risks, Project P&L and Digests | CRO Accelerate",
+    "seo_desc": "AI project assistants that maintain Gantt charts, task lists and resource plans, check delivery and risk impact, build project cash flow and P&L, and send weekly digests.",
+    "h1": "AI Project Assistants",
+    "h1_em": "that keep every project honest",
+    "lead": "Project managers spend most of their week on routine: updating the plan, chasing statuses, recalculating dates and budgets, writing the weekly update. Our project assistants take over that routine for every project in the portfolio, so people spend their time on decisions — and leadership sees the truth every Monday.",
+    "for_whom": [
+        "Companies running many parallel projects with a small PMO",
+        "Founders who lose track of what moved and what slipped",
+        "Teams coordinating projects across several companies or sites",
+    ],
+    "deliverables": [
+        ("Living Gantt", "Built and updated automatically from the task list; dependencies, delays and the critical path recalculated every day."),
+        ("Tasks & owners", "One registry of projects and tasks with owners, helpers, statuses and due dates — the single source of truth."),
+        ("Resources", "Who is overloaded, who is idle, which equipment and budget each project consumes."),
+        ("Delivery & risk checks", "Compares plan with fact, flags slipping tasks and shows which risks now threaten the deadline or budget."),
+        ("Project CF & P&L", "Cash flow and P&L per project, built automatically from the plan and actual spending."),
+        ("Weekly digests", "A one-page digest per project — what changed, next week's steps, who is tagged — ready to forward to the project group."),
+    ],
+    "formats": [
+        ("Project registry setup", "1 week", "Registry, cards and Gantt for your current portfolio, filled from what you already have."),
+        ("Assistant rollout", "2–3 weeks", "Risk checks, project CF/P&L and weekly digests switched on for every active project."),
+    ],
+    "outcomes": ["Hours of PM routine returned every week", "Slips spotted in days, not at the deadline", "Money per project visible, not guessed", "One Monday digest instead of ten status meetings"],
+    "faq": [
+        ("Do we need a new project-management tool?", "No. Assistants work on top of what you use — often a well-structured Google Sheet — and can later move with you to a dedicated tool."),
+        ("Who keeps the data up to date?", "People update only what they know (status, a note, a new date); the assistant does the rest: recalculation, checks, digests and reminders."),
+    ],
+}
+
+AI_OFFICE_CASE = {
+    "slug": "ai-office-of-agents",
+    "short": "An AI Office of agents with a Secretary",
+    "title": "An AI Office: eight agents, each on its own AI, coordinated by an Office Secretary",
+    "seo_title": "Case: Multi-Agent AI Office with a Coordinating Secretary Agent | CRO Accelerate",
+    "seo_desc": "How we built an umbrella AI Office: a Secretary agent routing work to seven specialised agents — growth, finance, research, signals and key-account agents — each running on the AI best suited to its job.",
+    "industry": "Founder office · multi-company",
+    "client": "Founder and executive running several companies and key client accounts at once · our own office, the model we build for clients",
+    "role": "Architecture, build and daily use",
+    "duration": "Rolled out agent by agent, 2026",
+    "badge": "AI Office",
+    "metrics": [("8", "specialised agents"), ("1", "Office Secretary coordinating them"), ("Multi-model", "each agent on the AI that fits its job")],
+    "scope": [("8", "agents in one office"), ("3", "key-account agents"), ("1", "secretary routing every request"), ("Daily", "briefs and calendar suggestions"), ("Weekly", "digest per area"), ("0", "data leaving the closed perimeter")],
+    "integrations": [
+        ("Coordination", ["Office Secretary: one entry point in chat for every thought, task and request", "Routing to the right agent, follow-up until done", "Calendar-aware: proposes slots, flags overload and idle time"]),
+        ("Specialised agents", ["Growth agent: website, SEO, content, LinkedIn and prospects", "Finance analyst: monitoring, rates and opportunities", "Research agent: literature, drafts and publication prep", "Signal monitor: watches many channels and surfaces only what matters"]),
+        ("Key-account agents", ["One agent per key client account", "Knows every thread, commitment and open question", "Prepares meeting briefs and next steps"]),
+        ("AI & LLM", ["Different models for different jobs: deep reasoning, fast triage, writing", "Shared, versioned memory of context and rules", "Guardrails: approval steps, blocklists, audit log"]),
+        ("Data & tools", ["Google Workspace: sheets, docs, calendar", "Messaging channels and the website", "Runs on scheduled jobs and a small bot server"]),
+    ],
+    "challenge": "One person, several companies, key client accounts, research and a pipeline of new business. Every day brought dozens of ideas and requests through chats, calls and documents — and the most valuable ones were the easiest to lose. Hiring assistants for each area was not realistic; a single chatbot could not hold that much context.",
+    "approach": [
+        ("A secretary, not a chatbot", "The Office Secretary is the only entry point: you drop a thought, a task or a voice note, and it decides which agent owns it, tracks it and reports back."),
+        ("One job per agent", "Each agent owns one area — growth, finance, research, signals, or a key client account — with its own instructions, data access and success measures."),
+        ("The right AI for each job", "Agents run on different models: deep reasoning for analysis and strategy, fast models for triage and monitoring, strong writers for content. Switching a model is a configuration change, not a rebuild."),
+        ("Key-account agents", "Three agents each follow one important client account: commitments, open questions, deadlines and context from every conversation — so nothing falls between meetings."),
+        ("Proactive, calendar-aware", "The Secretary polls the agents, turns their recommendations into calendar suggestions and warns when the week is overloaded or time drifts away from priorities."),
+        ("Closed perimeter", "Everything runs in our own accounts; nothing is used for model training or shared outside. Drafts are proposed, a human approves."),
+    ],
+    "modules_title": "Who works in the office",
+    "modules_lead": "Seven specialists, one Secretary. Each has a clear job, its own AI model and a weekly report.",
+    "modules": [
+        ("Office Secretary", "Receives every request, routes it, follows up and keeps the calendar realistic."),
+        ("Growth agent", "Website, SEO, content drafts, LinkedIn posts, lead and prospect research."),
+        ("Finance analyst", "Watches the numbers that matter, flags changes and opportunities."),
+        ("Research agent", "Finds and summarises literature, drafts sections, prepares publications."),
+        ("Signal monitor", "Reads many channels and surfaces only what needs attention."),
+        ("Key-account agent · A", "Owns the full context of a key client account and prepares every meeting."),
+        ("Key-account agent · B", "Tracks commitments and next steps for a second key account."),
+        ("Key-account agent · C", "Keeps a third account's threads, deadlines and risks in one place."),
+    ],
+    "results": [
+        "One entry point for every idea and request — each one is either done or explicitly parked, never lost in a chat.",
+        "Key client accounts come with full context: briefs and next steps ready before each conversation.",
+        "Growth, research and monitoring keep moving every week without being scheduled by hand.",
+        "The same architecture, scaled to a company, is what we deploy for clients as an AI Office.",
+    ],
+    "stack": ["Claude & other LLM APIs", "Python", "GitHub Actions", "Bot server", "Google Workspace", "Messaging APIs"],
+    "lesson": "Agents scale like a team, not like a tool: give each one a narrow job, a manager and a weekly report.",
+}

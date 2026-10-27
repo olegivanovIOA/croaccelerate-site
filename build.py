@@ -126,7 +126,7 @@ def write(path, html_text):
 def render(template, path, page, priority="0.7", lastmod=None, sitemap=True, **ctx):
     t = env.get_template(template)
     out = t.render(cfg=CFG, nav=NAV, page=page, services=C.SERVICES, cases=C.CASES, icons=C.ICONS,
-                   home_faq=C.HOME_FAQ, seams=C.SEAMS, year=NOW.year, build_id=BUILD_ID, **ctx)
+                   home_faq=C.HOME_FAQ, seams=C.SEAMS, diagrams={'manufacturing-group-control-tower':'From sources to decisions','ai-office-of-agents':'Who talks to whom','multi-entity-finance-automation':'The business objects behind the numbers'}, year=NOW.year, build_id=BUILD_ID, **ctx)
     write(path, out)
     if sitemap and not page.get("noindex"):
         SITEMAP.append((path, lastmod or NOW.date().isoformat(), priority))
@@ -336,9 +336,9 @@ def build_pages(posts):
                                       "home", "home", schema=home_schema), priority="1.0", posts=posts)
 
     render("listing.html", "/services/", page_ctx("/services/", "Services — Fractional CINO, AI Agents, AI Office | CRO Accelerate",
-                                                  "Fractional Chief Innovation Officer, AI agent development, AI Office, Digital Control Tower dashboards and Revenue Engine / Fractional CCO.",
+                                                  "Fractional Chief Innovation Officer, AI agents, chatbots in 2–3 days, AI Office, AI project assistants, Digital Control Tower dashboards and Revenue Engine / Fractional CCO.",
                                                   "services", "services", eyebrow="Services", h1="Services", h1_em="one accountable owner",
-                                                  lead="Five connected services. Start with a diagnostic or a focused build; scale what proves itself.",
+                                                  lead="Seven connected services. Start with a diagnostic or a fast build; scale what proves itself.",
                                                   schema=[crumbs_schema([("Home", "/"), ("Services", "/services/")])]), priority="0.9", kind="services")
 
     for s in C.SERVICES:
@@ -346,17 +346,23 @@ def build_pages(posts):
         svc = {"@context": "https://schema.org", "@type": "Service", "name": s["name"], "description": s["seo_desc"],
                "provider": {"@id": SITE + "/#org"}, "areaServed": ["European Union", "United Kingdom", "United States"], "url": SITE + path}
         related_map = {
-            "fractional-chief-innovation-officer": [0, 3], "ai-agents": [1, 0], "ai-office": [0, 1],
-            "digital-control-tower": [0, 2], "revenue-engine": [1, 3]}
-        related = [C.CASES[i] for i in related_map.get(s["slug"], [0, 1])]
+            "fractional-chief-innovation-officer": ["manufacturing-group-control-tower", "ai-office-of-agents"],
+            "ai-agents": ["ai-office-of-agents", "closed-loop-marketing-attribution"],
+            "chatbots": ["ai-office-of-agents", "market-intelligence-eu-expansion"],
+            "ai-office": ["ai-office-of-agents", "manufacturing-group-control-tower"],
+            "project-assistants": ["manufacturing-group-control-tower", "multi-entity-finance-automation"],
+            "digital-control-tower": ["manufacturing-group-control-tower", "multi-entity-finance-automation"],
+            "revenue-engine": ["closed-loop-marketing-attribution", "market-intelligence-eu-expansion"]}
+        by_slug = {c["slug"]: c for c in C.CASES}
+        related = [by_slug[x] for x in related_map.get(s["slug"], []) if x in by_slug] or C.CASES[:2]
         render("service.html", path, page_ctx(path, s["seo_title"], s["seo_desc"], "service", "ai-office" if s["slug"] == "ai-office" else "services",
                                               schema=[svc, faq_schema(s["faq"]), crumbs_schema([("Home", "/"), ("Services", "/services/"), (s["short"], path)])],
                                               content_group="service"), priority="0.9", s=s, related=related)
 
     render("listing.html", "/cases/", page_ctx("/cases/", "Case Studies — AI, Data & Revenue Transformation | CRO Accelerate",
-                                               "Anonymised case studies: live KPI control tower, closed-loop marketing attribution, multi-entity finance automation and market intelligence for EU expansion.",
+                                               "Anonymised case studies: live management dashboards, a multi-agent AI Office, closed-loop marketing attribution, multi-entity finance automation and market intelligence for EU expansion.",
                                                "cases", "cases", eyebrow="Cases", h1="Case studies", h1_em="built from zero",
-                                               lead="Four anonymised stories from scaling a multi-site manufacturing group — the same playbook I bring to clients.",
+                                               lead="Five anonymised stories — from scaling a multi-site manufacturing group to running our own AI Office. The same playbook we bring to clients.",
                                                schema=[crumbs_schema([("Home", "/"), ("Cases", "/cases/")])]), priority="0.9", kind="cases")
     for c in C.CASES:
         path = f"/cases/{c['slug']}/"

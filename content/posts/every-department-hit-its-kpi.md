@@ -12,7 +12,7 @@ Every month the reports look fine. Procurement shows savings. Marketing delivere
 
 And the company still misses its quarter.
 
-I have seen this pattern in IT services, in marketing companies and now in manufacturing. It is rarely a people problem. Employees are usually doing exactly what the system asks of them. The problem sits **between** the reports — at the seams where one function's responsibility ends and someone else starts paying for its result.
+We have seen this pattern in IT services, in marketing companies and now in manufacturing. It is rarely a people problem. Employees are usually doing exactly what the system asks of them. The problem sits **between** the reports — at the seams where one function's responsibility ends and someone else starts paying for its result.
 
 ## Where the money actually leaks
 
@@ -20,7 +20,7 @@ A few seams show up again and again.
 
 **Procurement → production.** Cheaper raw material lowers purchase cost by a few percent. Six weeks later the defect rate creeps up, and so does scrap, rework and machine time. Procurement reports a saving; production reports a quality problem; nobody connects the two because they live in different spreadsheets.
 
-**Marketing → sales.** Marketing is measured on leads, so it buys leads. Sales is measured on closed deals, so it ignores the ones it cannot close. In one company I worked with, most declined leads were screened out before a salesperson ever saw them — and that screening pipeline had never been included in any report. Marketing looked successful, sales looked busy, and the cost per profitable customer was invisible.
+**Marketing → sales.** Marketing is measured on leads, so it buys leads. Sales is measured on closed deals, so it ignores the ones it cannot close. In one company we worked with, most declined leads were screened out before a salesperson ever saw them — and that screening pipeline had never been included in any report. Marketing looked successful, sales looked busy, and the cost per profitable customer was invisible.
 
 **Finance → reality.** A financial model can be mathematically flawless and still describe a business that no longer exists. Plans built on last year's assumptions keep being "on track" right up until the cash says otherwise.
 
@@ -32,7 +32,7 @@ KPIs are not the villain. The problem is that most of them are designed **per fu
 
 A purchase-price KPI does not see defect cost. A lead-volume KPI does not see margin per customer. An output KPI does not see idle machine-hours on the sites that are waiting for orders. Each metric is correct; the combination tells the wrong story.
 
-So the question I ask first is not "which department is failing?" but:
+So the question we ask first is not "which department is failing?" but:
 
 > Where does this team's responsibility end — and who pays for its result next?
 
@@ -42,7 +42,7 @@ In practice, three moves do most of the work.
 
 ### 1. Register the metrics before you build dashboards
 
-List every management metric with its owner, formula, source and how it is refreshed. You will immediately find metrics that no one owns, three versions of the same number, and decisions that rely on figures nobody can trace. In one group I helped build a registry of 168 metrics; the share that was fully automated became a KPI of its own and grew from 45% to 81% in about ten weeks.
+List every management metric with its owner, formula, source and how it is refreshed. You will immediately find metrics that no one owns, three versions of the same number, and decisions that rely on figures nobody can trace. In one group we built a registry of 168 metrics; the share that was fully automated became a KPI of its own and grew from 45% to 81% in about ten weeks.
 
 ### 2. Put connected functions on one screen
 

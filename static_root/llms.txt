@@ -1,10 +1,12 @@
 # CRO Accelerate
-> Oleg Ivanov — Fractional Chief Innovation Officer for scaling companies (EU, UK, US). AI strategy, AI agents, AI Office (multi-agent systems), live KPI dashboards ("Digital Control Tower"), ERP roadmaps and Revenue Engine / Fractional CCO.
+> Oleg Ivanov — Fractional Chief Innovation Officer for scaling companies (EU, UK, US). AI strategy, AI agents (first agent in 3 working days), chatbots in 2–3 days, AI Office (multi-agent systems with a coordinating Secretary), AI project assistants, live KPI dashboards ("Digital Control Tower"), ERP roadmaps and Revenue Engine / Fractional CCO.
 
 ## Services
 - [Fractional Chief Innovation Officer](https://croaccelerate.com/services/fractional-chief-innovation-officer/)
 - [AI Agents](https://croaccelerate.com/services/ai-agents/)
+- [Chatbots in 2–3 days](https://croaccelerate.com/services/chatbots/)
 - [AI Office](https://croaccelerate.com/services/ai-office/)
+- [AI Project Assistants](https://croaccelerate.com/services/project-assistants/)
 - [Digital Control Tower](https://croaccelerate.com/services/digital-control-tower/)
 - [Revenue Engine / Fractional CCO](https://croaccelerate.com/services/revenue-engine/)
 
