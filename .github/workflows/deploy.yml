@@ -1,0 +1,78 @@
+name: Build & deploy to GoDaddy
+# Builds the static site (pulling blog posts from WordPress) and uploads it by SFTP into the WordPress root.
+# Runs on every push to main, when WordPress publishes/updates a post (repository_dispatch), every 6 hours, or manually.
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [wp-publish]
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+
+      - name: Build
+        env:
+          GTM_ID: ${{ vars.GTM_ID }}
+          LEAD_ENDPOINT: ${{ vars.LEAD_ENDPOINT }}
+        run: python build.py
+
+      - name: Sanity checks
+        run: |
+          test -s dist/index.html && test -s dist/404.html && test -s dist/sitemap.xml && test -s dist/redirects.json
+          grep -q "application/ld+json" dist/index.html
+          echo "pages in sitemap: $(grep -o '<loc>' dist/sitemap.xml | wc -l)"
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Upload by SFTP (only our folders are mirrored with delete; WordPress files are never touched)
+        env:
+          HOST: ${{ secrets.SFTP_HOST }}
+          PORT: ${{ secrets.SFTP_PORT }}
+          USER: ${{ secrets.SFTP_USER }}
+          PASS: ${{ secrets.SFTP_PASSWORD }}
+          ROOT: ${{ secrets.SFTP_PATH }}
+        run: |
+          set -e
+          if [ -z "$HOST" ]; then echo "::error::SFTP secrets are not set"; exit 1; fi
+          PORT=${PORT:-22}
+          BASE="set sftp:auto-confirm yes; set net:max-retries 3; set net:timeout 30; cd ${ROOT:-.};"
+          # safety: upload only into the WordPress root (must contain wp-config.php)
+          if ! lftp -u "$USER","$PASS" -p "$PORT" "sftp://$HOST" -e "$BASE cls -1; bye" | grep -qx "wp-config.php"; then
+            echo "::error::wp-config.php not found in SFTP_PATH='${ROOT:-.}'. Listing:"
+            lftp -u "$USER","$PASS" -p "$PORT" "sftp://$HOST" -e "$BASE cls -1; bye" || true
+            exit 1
+          fi
+          CMDS="$BASE"
+          # folders that belong to the static site: mirror with --delete inside them only
+          for d in static services cases blog about contact ai-readiness privacy thank-you; do
+            [ -d "dist/$d" ] && CMDS="$CMDS mirror -R --delete --parallel=4 --verbose=1 dist/$d $d;"
+          done
+          # root-level files (never delete anything else in the WordPress root)
+          for f in index.html 404.html sitemap.xml robots.txt llms.txt redirects.json; do
+            CMDS="$CMDS put -O . dist/$f;"
+          done
+          lftp -u "$USER","$PASS" -p "$PORT" "sftp://$HOST" -e "$CMDS bye"
+          echo "Uploaded."
+
+      - name: Smoke test live site
+        run: |
+          sleep 5
+          for u in / /services/ /cases/ /blog/ /ai-readiness/; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "https://croaccelerate.com$u")
+            echo "$u -> $code"
+          done
