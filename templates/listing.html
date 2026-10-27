@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta_band, case_card %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {{ page.h1 }}</nav>
+    <div class="sec-head">
+      <p class="eyebrow">{{ page.eyebrow }}</p>
+      <h1>{{ page.h1 }} <span class="serif grad">{{ page.h1_em }}</span></h1>
+      <p class="lead">{{ page.lead }}</p>
+    </div>
+    {% if kind == "services" %}
+    <div class="grid g2">
+      {% for s in services %}
+      <a class="glass card card-link reveal" href="/services/{{ s.slug }}/">
+        <div class="icon">{{ icons[s.icon]|safe }}</div>
+        <span class="badge {% if loop.first %}teal{% endif %}">{{ s.badge }}</span>
+        <h2 style="font-size:1.5rem">{{ s.name }}</h2>
+        <p>{{ s.teaser }}</p>
+        <ul class="check">{% for t, d in s.deliverables[:3] %}<li>{{ t }}</li>{% endfor %}</ul>
+        <span class="more">Explore →</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="grid g2">{% for c in cases %}{{ case_card(c, icons) }}{% endfor %}</div>
+    <p class="muted" style="margin-top:22px;font-size:.92rem">All cases are anonymised. References available after an NDA.</p>
+    {% endif %}
+  </div>
+</section>
+{{ cta_band(cfg, id="list_" ~ kind) }}
+{% endblock %}

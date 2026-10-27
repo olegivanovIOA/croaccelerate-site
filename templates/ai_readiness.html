@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="wrap" style="max-width:860px">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / AI Readiness Scorecard</nav>
+    <div class="center sec-head">
+      <span class="pill"><b>Free</b> 12 questions · 4 minutes</span>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">AI & Digital <span class="serif grad">Readiness Scorecard</span></h1>
+      <p class="lead">Benchmark your company across strategy, data, automation and people. See your score instantly; get a personal 90-day roadmap by email.</p>
+    </div>
+
+    <div class="glass quiz" id="scorecard">
+      <div class="progress" aria-hidden="true"><i></i></div>
+      <div data-questions></div>
+      <div class="qnav"><button type="button" class="btn btn-glass btn-sm" data-back>← Back</button><span data-counter>1 / 12</span></div>
+
+      <div data-result hidden>
+        <div class="center">
+          <div class="score-ring" data-ring></div>
+          <p class="eyebrow" style="justify-content:center">Your level</p>
+          <h2 data-level></h2>
+          <p class="lead" data-level-text style="margin:0 auto"></p>
+        </div>
+        <div class="dims" data-dims></div>
+        <form class="form" data-lead-form="scorecard" data-lead-type="scorecard" data-redirect="/thank-you/?from=scorecard" novalidate style="padding:22px 0 0">
+          <h3>Get your personal 90-day roadmap</h3>
+          <p class="muted">Based on your answers — three quick wins, one strategic bet and what to leave for later. Written by me, not a template.</p>
+          <input type="hidden" name="score_total"><input type="hidden" name="score_dims"><input type="hidden" name="answers">
+          <div class="row2">
+            <div class="field"><label for="sc-name">Name *</label><input id="sc-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="sc-email">Work email *</label><input id="sc-email" name="email" type="email" required autocomplete="email"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="sc-company">Company</label><input id="sc-company" name="company" autocomplete="organization"></div>
+            <div class="field"><label for="sc-size">Company size</label><select id="sc-size" name="company_size"><option value="">Select…</option><option>1–20</option><option>20–50</option><option>50–200</option><option>200–500</option><option>500+</option></select></div>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>Send me the roadmap and occasional insights. Unsubscribe anytime. <a href="/privacy/">Privacy</a>.</span></label>
+          <button class="btn btn-primary" type="submit">Send my roadmap <span class="arr">→</span></button>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+    <p class="muted center" style="font-size:.88rem;margin-top:16px">Answers are used only to prepare your roadmap.</p>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/scorecard.js?v={{ build_id }}" defer></script>{% endblock %}

@@ -1,0 +1,66 @@
+{% macro cta_band(cfg, title="Let's find the three initiatives that matter most.", text="A 30-minute call: an honest look at where your business really is, what slows it down, and where AI and data would pay back first. No pitch deck.", id="band") %}
+<section class="sp-top">
+  <div class="wrap">
+    <div class="glass cta reveal">
+      <p class="eyebrow" style="justify-content:center">Next step</p>
+      <h2>{{ title }}</h2>
+      <p class="lead" style="margin:0 auto">{{ text }}</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-primary" href="{{ cfg.calendly }}" target="_blank" rel="noopener" data-cta="{{ id }}_book">Book a 30-min call <span class="arr">→</span></a>
+        <a class="btn btn-glass" href="/ai-readiness/" data-cta="{{ id }}_scorecard">Take the AI Readiness Scorecard</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro faq_block(items, title="Questions, answered") %}
+<section>
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">FAQ</p><h2>{{ title }}</h2></div>
+    <div class="faq">
+      {% for q, a in items %}
+      <details class="glass reveal"><summary>{{ q }}</summary><div class="a">{{ a }}</div></details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro case_card(c, icons) %}
+<a class="glass case card-link reveal" href="/cases/{{ c.slug }}/">
+  <span class="badge {% if c.badge == 'Revenue' %}gold{% elif c.badge == 'Data & Ops' %}teal{% endif %}">{{ c.badge }} · {{ c.industry }}</span>
+  <h3>{{ c.title }}</h3>
+  <div class="metric-row">
+    {% for v, l in c.metrics %}<div class="metric"><b>{{ v }}</b><span>{{ l }}</span></div>{% endfor %}
+  </div>
+  <span class="more" style="margin-top:auto;color:#8ff5e7;font-weight:600">Read the case →</span>
+</a>
+{% endmacro %}
+
+{% macro lead_form(cfg, form_name="contact", lead_type="contact", button="Send message", compact=False) %}
+<form class="glass form" data-lead-form="{{ form_name }}" data-lead-type="{{ lead_type }}" data-redirect="/thank-you/" novalidate>
+  <div class="row2">
+    <div class="field"><label for="{{ form_name }}-name">Name *</label><input id="{{ form_name }}-name" name="name" required autocomplete="name"></div>
+    <div class="field"><label for="{{ form_name }}-email">Work email *</label><input id="{{ form_name }}-email" name="email" type="email" required autocomplete="email"></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="{{ form_name }}-company">Company</label><input id="{{ form_name }}-company" name="company" autocomplete="organization"></div>
+    <div class="field"><label for="{{ form_name }}-role">Your role</label><input id="{{ form_name }}-role" name="role" autocomplete="organization-title"></div>
+  </div>
+  {% if not compact %}
+  <div class="row2">
+    <div class="field"><label for="{{ form_name }}-size">Company size</label>
+      <select id="{{ form_name }}-size" name="company_size"><option value="">Select…</option><option>1–20</option><option>20–50</option><option>50–200</option><option>200–500</option><option>500+</option></select></div>
+    <div class="field"><label for="{{ form_name }}-interest">Interested in</label>
+      <select id="{{ form_name }}-interest" name="interest"><option value="">Select…</option><option>Fractional Chief Innovation Officer</option><option>AI Agents</option><option>AI Office</option><option>Digital Control Tower</option><option>Revenue Engine / Fractional CCO</option><option>Not sure yet</option></select></div>
+  </div>
+  <div class="field"><label for="{{ form_name }}-country">Country</label><input id="{{ form_name }}-country" name="country" autocomplete="country-name"></div>
+  {% endif %}
+  <div class="field"><label for="{{ form_name }}-msg">What would you like to improve?</label><textarea id="{{ form_name }}-msg" name="message" placeholder="A sentence or two is enough."></textarea></div>
+  <div class="hp" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+  <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>I agree that my details are used to reply to this request, as described in the <a href="/privacy/">privacy policy</a>.</span></label>
+  <button class="btn btn-primary" type="submit">{{ button }} <span class="arr">→</span></button>
+  <p class="form-msg" role="status"></p>
+</form>
+{% endmacro %}

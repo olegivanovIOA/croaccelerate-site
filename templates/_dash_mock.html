@@ -1,0 +1,52 @@
+{# Illustrative dashboard mock-up. Layout mirrors the real dashboards; every number is invented and labelled as such. #}
+<figure class="dash reveal" aria-label="Illustrative mock-up of a management dashboard">
+  <div class="glass dash-win">
+    <div class="dash-bar"><i></i><i></i><i></i><span>Management cockpit · CEO view</span><em><span class="dot"></span>live · refreshed 09:00</em></div>
+    <div class="dash-body">
+      <nav class="dash-tabs" aria-hidden="true">
+        <b class="on">CEO</b><b>Strategy</b><b>Production</b><b>Quality</b><b>Sales</b><b>Marketing</b><b>Finance</b><b>People</b><b>Sites</b><b>Registry</b>
+      </nav>
+      <div class="dash-main">
+        <div class="dash-kpis">
+          <div class="dk"><span>Utilisation</span><b>74%</b><small class="up">▲ 6 pp</small><i class="ok"></i></div>
+          <div class="dk"><span>Defect rate</span><b>3.1%</b><small class="up">▼ 0.8 pp</small><i class="ok"></i></div>
+          <div class="dk"><span>Won deals</span><b>212</b><small class="up">▲ 14%</small><i class="ok"></i></div>
+          <div class="dk"><span>Gross margin</span><b>38%</b><small>= plan</small><i class="ok"></i></div>
+          <div class="dk"><span>Strategy progress</span><b>61%</b><small class="up">▲ 9 pp</small><i class="ok"></i></div>
+          <div class="dk"><span>KPIs automated</span><b>81%</b><small class="up">▲ from 45%</small><i class="warn"></i></div>
+        </div>
+        <div class="dash-charts">
+          <div class="dc dc-line">
+            <span class="dc-t">Capacity utilisation by week · target 80%</span>
+            <svg viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="dl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".45"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></linearGradient></defs>
+              <line x1="0" y1="30" x2="320" y2="30" stroke="#e9b44c" stroke-dasharray="4 4" stroke-width="1"/>
+              <path d="M0 92 L32 86 L64 88 L96 74 L128 70 L160 66 L192 58 L224 61 L256 48 L288 44 L320 40 L320 120 L0 120Z" fill="url(#dl)"/>
+              <path d="M0 92 L32 86 L64 88 L96 74 L128 70 L160 66 L192 58 L224 61 L256 48 L288 44 L320 40" fill="none" stroke="#5ff0dc" stroke-width="2.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="dc">
+            <span class="dc-t">Defect causes · Pareto</span>
+            <div class="pareto">
+              <p><span>Cause A</span><i style="width:92%"></i></p>
+              <p><span>Cause B</span><i style="width:64%"></i></p>
+              <p><span>Cause C</span><i style="width:38%"></i></p>
+              <p><span>Cause D</span><i style="width:21%"></i></p>
+              <p><span>Night shift</span><i class="hot" style="width:55%"></i></p>
+            </div>
+          </div>
+          <div class="dc dc-rings">
+            <span class="dc-t">Sites · utilisation</span>
+            <div class="rings">
+              <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="rb"/><circle cx="18" cy="18" r="15" class="rf" stroke-dasharray="78 100"/><text x="18" y="21">82</text></svg>
+              <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="rb"/><circle cx="18" cy="18" r="15" class="rf" stroke-dasharray="66 100"/><text x="18" y="21">70</text></svg>
+              <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="rb"/><circle cx="18" cy="18" r="15" class="rf warn" stroke-dasharray="48 100"/><text x="18" y="21">51</text></svg>
+              <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="rb"/><circle cx="18" cy="18" r="15" class="rf" stroke-dasharray="83 100"/><text x="18" y="21">88</text></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <figcaption>Illustrative mock-up: the layout and logic of the real dashboards. All numbers here are invented — the real ones stay under NDA.</figcaption>
+</figure>

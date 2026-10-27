@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta_band, case_card %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/cases/">Cases</a> / {{ c.short }}</nav>
+    <span class="pill reveal"><b>{{ c.badge }}</b> {{ c.industry }} · anonymised (NDA)</span>
+    <h1 class="reveal" style="font-size:clamp(2rem,4.6vw,3.4rem);max-width:22ch">{{ c.title }}</h1>
+    <div class="grid g3 reveal" style="margin-top:28px">
+      {% for v, l in c.metrics %}<div class="glass stat" style="padding:20px"><b style="font-size:2rem">{{ v }}</b><span>{{ l }}</span></div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sp-top">
+  <div class="wrap">
+    <div class="glass reveal" style="padding:22px 26px">
+      <div class="grid g3">
+        <div><p class="eyebrow mb0">Client</p><p class="mb0">{{ c.client }}</p></div>
+        <div><p class="eyebrow mb0">My role</p><p class="mb0">{{ c.role }}</p></div>
+        <div><p class="eyebrow mb0">Timeline</p><p class="mb0">{{ c.duration }}</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sp-top">
+  <div class="wrap prose">
+    <h2>The challenge</h2>
+    <p>{{ c.challenge }}</p>
+    <h2>What we did</h2>
+  </div>
+  <div class="wrap" style="max-width:980px">
+    <div class="grid g2" style="margin-top:20px">
+      {% for t, d in c.approach %}
+      <div class="glass card reveal"><div class="num">{{ "%02d"|format(loop.index) }}</div><h3>{{ t }}</h3><p>{{ d }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+  {% if c.mock %}
+  <div class="wrap" style="max-width:1080px;margin-top:56px">{% include "_dash_mock.html" %}</div>
+  {% endif %}
+  {% if c.modules %}
+  <div class="wrap modules" style="max-width:1080px;margin-top:56px">
+    <div class="sec-head"><p class="eyebrow">Under the hood</p><h2>{{ c.modules_title }}</h2><p class="lead">{{ c.modules_lead }}</p></div>
+    <div class="grid g3">
+      {% for t, d in c.modules %}<div class="glass card reveal"><h3>{{ t }}</h3><p>{{ d }}</p></div>{% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  <div class="wrap prose" style="margin-top:40px">
+    <h2>Results</h2>
+    <ul class="check">{% for r in c.results %}<li>{{ r }}</li>{% endfor %}</ul>
+    {% if c.honest %}<h3>What didn't go to plan</h3>
+    <p>{{ c.honest }}</p>{% endif %}
+    <blockquote><strong>Lesson.</strong> {{ c.lesson }}</blockquote>
+    <h3>Stack</h3>
+    <ul class="tags">{% for t in c.stack %}<li>{{ t }}</li>{% endfor %}</ul>
+    <p class="muted" style="margin-top:24px;font-size:.9rem">Names, products, locations and financial figures are withheld under NDA. Metrics shown are operational and verified.</p>
+  </div>
+</section>
+
+{{ cta_band(cfg, title="Want the same clarity in your company?", text="Tell me where you are today. I'll tell you honestly what I'd do first — and whether it needs me.", id="case_" ~ c.slug) }}
+
+<section class="sp-top">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">More cases</p></div>
+    <div class="grid g2">{% for o in others %}{{ case_card(o, icons) }}{% endfor %}</div>
+  </div>
+</section>
+{% endblock %}

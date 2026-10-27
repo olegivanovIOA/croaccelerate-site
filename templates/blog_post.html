@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+  <section class="hero" style="padding-bottom:24px">
+    <div class="wrap prose">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a>{% if p.category %} / <a href="/blog/category/{{ p.category.slug }}/">{{ p.category.name }}</a>{% endif %}</nav>
+      <h1 style="font-size:clamp(2rem,4.6vw,3.2rem)">{{ p.title }}</h1>
+      <div class="meta"><span>{{ cfg.owner_name }}</span><span>·</span><time datetime="{{ p.date }}">{{ p.date_human }}</time>{% if p.modified_human and p.modified_human != p.date_human %}<span>· updated {{ p.modified_human }}</span>{% endif %}<span>·</span><span>{{ p.read_min }} min read</span></div>
+      {% if p.image %}<img src="{{ p.image }}" alt="{{ p.image_alt }}" style="border-radius:24px;margin:0 0 8px">{% endif %}
+    </div>
+  </section>
+  <section class="sp-top">
+    <div class="wrap prose">
+      {% if p.toc|length > 2 %}
+      <nav class="glass toc" aria-label="Contents"><strong>In this article</strong><ol>{% for id, t in p.toc %}<li><a href="#{{ id }}">{{ t }}</a></li>{% endfor %}</ol></nav>
+      {% endif %}
+      {{ p.html|safe }}
+      <div class="glass cta" style="margin-top:48px;text-align:left">
+        <p class="eyebrow">Working on something similar?</p>
+        <h2 style="margin-left:0;font-size:1.6rem">I help scaling companies put AI and live data to work.</h2>
+        <div class="btn-row"><a class="btn btn-primary" href="{{ cfg.calendly }}" target="_blank" rel="noopener" data-cta="post_book">Book a 30-min call <span class="arr">→</span></a><a class="btn btn-glass" href="/ai-readiness/" data-cta="post_scorecard">AI Readiness Scorecard</a></div>
+      </div>
+      <div class="glass" style="padding:22px;margin-top:22px;display:flex;gap:16px;align-items:center">
+        <img src="/static/img/oleg-avatar.jpg" alt="Oleg Ivanov" width="64" height="64" loading="lazy" style="width:64px;height:64px;border-radius:50%;object-fit:cover">
+        <div><strong>{{ cfg.owner_name }}</strong><br><span class="muted" style="font-size:.9rem">{{ cfg.owner_title }} · <a href="{{ cfg.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></span></div>
+      </div>
+    </div>
+  </section>
+  {% if related %}
+  <section class="sp-top">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">Keep reading</p></div>
+      <div class="grid g3">
+        {% for r in related %}
+        <a class="glass post-card card-link" href="/blog/{{ r.slug }}/"><span class="muted" style="font-size:.82rem">{{ r.date_human }}</span><h3 style="margin-top:6px">{{ r.title }}</h3><p>{{ r.excerpt }}</p></a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

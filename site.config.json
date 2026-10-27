@@ -1,0 +1,22 @@
+{
+  "site_url": "https://croaccelerate.com",
+  "site_name": "CRO Accelerate",
+  "tagline": "AI, digital operations & growth for scaling companies",
+  "owner_name": "Oleg Ivanov",
+  "owner_title": "Founder & Fractional Chief Innovation Officer",
+  "email": "partner@croaccelerate.com",
+  "calendly": "https://calendly.com/ioa4/30min",
+  "linkedin": "https://www.linkedin.com/in/oleg-ivanov-a269ab1/",
+  "telegram": "https://t.me/ioa_ioa",
+  "whatsapp": "https://wa.me/380675791282",
+  "location_line": "Remote-first · working with EU, UK & US companies",
+
+  "gtm_id": "GTM-XXXXXXX",
+  "lead_endpoint": "https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec",
+
+  "wp_api": "https://croaccelerate.com/wp-json/wp/v2",
+  "wp_public_host": "https://croaccelerate.com",
+  "blog_posts_per_page": 12,
+
+  "default_og_image": "/static/img/og-default.png"
+}

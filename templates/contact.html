@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% from "_macros.html" import lead_form %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Contact</nav>
+    <div class="hero-grid" style="align-items:start">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">Start with <span class="serif grad">the real question.</span></h1>
+        <p class="lead">What should your company see more clearly — and what would you automate first if you had an owner for it? Write a few lines or book a call directly.</p>
+        <div class="glass reveal" style="padding:22px;margin-top:26px">
+          <ul class="check" style="margin:0">
+            <li>Reply within one business day</li>
+            <li>30-minute call, no pitch deck</li>
+            <li>NDA available before any detail</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="{{ cfg.calendly }}" target="_blank" rel="noopener" data-cta="contact_book">Book a 30-min call <span class="arr">→</span></a>
+            <a class="btn btn-glass" href="{{ cfg.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-glass" href="mailto:{{ cfg.email }}">{{ cfg.email }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">{{ lead_form(cfg, form_name="contact", lead_type="contact") }}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+# Cloudflare Pages redirects — old WordPress site -> new structure
+/home                       /                                     301
+/home/                      /                                     301
+/fractional-cco             /services/revenue-engine/             301
+/fractional-cco/            /services/revenue-engine/             301
+/fractional-cco-2           /services/revenue-engine/             301
+/fractional-cco-2/          /services/revenue-engine/             301
+/revenue-optimization       /services/revenue-engine/             301
+/revenue-optimization/      /services/revenue-engine/             301
+/hire-developers            /services/                            301
+/hire-developers/           /services/                            301
+/industries                 /cases/                               301
+/industries/*               /cases/                               301
+/partnership                /contact/                             301
+/partnership/               /contact/                             301
+/fractional-cino            /services/fractional-chief-innovation-officer/  301
+/fractional-cino/           /services/fractional-chief-innovation-officer/  301
+/scorecard                  /ai-readiness/                        301
+/scorecard/                 /ai-readiness/                        301
+/feed                       /blog/feed.xml                        301
+/feed/                      /blog/feed.xml                        301

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="wrap prose">
+    {% if page.crumb %}<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {{ page.crumb }}</nav>{% endif %}
+    <h1 style="font-size:clamp(2rem,4.6vw,3.2rem)">{{ page.h1 }}{% if page.h1_em %} <span class="serif grad">{{ page.h1_em }}</span>{% endif %}</h1>
+    {{ body|safe }}
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}{% if page.page_type == "thank_you" %}
+<script>
+(function(){var p=new URLSearchParams(location.search);
+ window.dataLayer=window.dataLayer||[];
+ dataLayer.push({event:"thank_you_view",lead_source_form:p.get("from")||"contact"});})();
+</script>{% endif %}{% endblock %}

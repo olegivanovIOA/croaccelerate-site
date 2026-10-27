@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta_band, faq_block, case_card %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {{ s.short }}</nav>
+    <div class="hero-grid">
+      <div>
+        <span class="pill reveal"><b>{{ s.badge }}</b> {{ s.short }}</span>
+        <h1 class="reveal">{{ s.h1 }} <span class="serif grad">{{ s.h1_em }}</span></h1>
+        <p class="lead reveal">{{ s.lead }}</p>
+        <div class="btn-row reveal">
+          <a class="btn btn-primary" href="{{ cfg.calendly }}" target="_blank" rel="noopener" data-cta="svc_{{ s.slug }}_book">Discuss your case <span class="arr">→</span></a>
+          <a class="btn btn-glass" href="#formats">Engagement formats</a>
+        </div>
+      </div>
+      <aside class="glass brief reveal">
+        <div class="brief-top"><span><span class="dot"></span>Who it's for</span><span>{{ s.badge }}</span></div>
+        <ul class="check">{% for f in s.for_whom %}<li>{{ f }}</li>{% endfor %}</ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sp-top">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">What you get</p><h2>Deliverables</h2></div>
+    <div class="grid g3">
+      {% for t, d in s.deliverables %}
+      <div class="glass card reveal"><div class="num">{{ "%02d"|format(loop.index) }}</div><h3>{{ t }}</h3><p>{{ d }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if s.slug == "digital-control-tower" %}
+<section class="sp-top"><div class="wrap" style="max-width:1080px">
+  <div class="sec-head reveal"><p class="eyebrow">What it looks like</p><h2>One screen per question <span class="serif">the CEO asks.</span></h2></div>
+  {% include "_dash_mock.html" %}
+</div></section>
+{% endif %}
+{% if s.examples %}
+<section class="sp-top">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Examples</p><h2>Agents that pay back quickly</h2></div>
+    <div class="grid g3">
+      {% for t, d in s.examples %}
+      <div class="glass card reveal"><div class="icon">{{ icons['agent']|safe }}</div><h3>{{ t }}</h3><p>{{ d }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.dogfood %}
+<section class="sp-top">
+  <div class="wrap">
+    <div class="glass cta reveal"><span class="badge teal">I use what I sell</span><h2>Running on my own AI Office</h2><p class="lead" style="margin:0 auto">{{ s.dogfood }}</p></div>
+  </div>
+</section>
+{% endif %}
+
+<section id="formats">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Engagement formats</p><h2>Start small, <span class="serif">scale what works.</span></h2></div>
+    <div class="grid g3">
+      {% for n, t, d in s.formats %}
+      <div class="glass card reveal"><span class="badge {% if loop.first %}teal{% endif %}">{{ t }}</span><h3>{{ n }}</h3><p>{{ d }}</p></div>
+      {% endfor %}
+    </div>
+    <p class="muted reveal" style="margin-top:18px;font-size:.92rem">Pricing is fixed per format after a short scoping call. NDA by default.</p>
+  </div>
+</section>
+
+<section class="sp-top">
+  <div class="wrap">
+    <div class="glass founder split reveal">
+      <div><p class="eyebrow">Outcomes</p><h2>What changes</h2></div>
+      <ul class="check">{% for o in s.outcomes %}<li>{{ o }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="sp-top">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Related cases</p><h2>Done before, <span class="serif">measured since.</span></h2></div>
+    <div class="grid g2">{% for c in related %}{{ case_card(c, icons) }}{% endfor %}</div>
+  </div>
+</section>
+
+{{ faq_block(s.faq) }}
+{{ cta_band(cfg, id="svc_" ~ s.slug) }}
+{% endblock %}

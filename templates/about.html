@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta_band %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
+    <div class="glass founder reveal">
+      <div class="portrait">{% if cfg.portrait %}<img src="{{ cfg.portrait }}" alt="Oleg Ivanov">{% else %}<span class="mono" aria-hidden="true"><b>OI</b><small>Oleg Ivanov<br>Fractional CINO</small></span>{% endif %}</div>
+      <div>
+        <p class="eyebrow">Founder-led. Hands-on.</p>
+        <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">Oleg Ivanov</h1>
+        <p class="lead">{{ cfg.owner_title }}. I help scaling companies turn AI, data and digital operations into measurable advantage — as the senior owner who also builds.</p>
+        <div class="btn-row"><a class="btn btn-primary" href="{{ cfg.calendly }}" target="_blank" rel="noopener" data-cta="about_book">Book a call <span class="arr">→</span></a><a class="btn btn-glass" href="{{ cfg.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sp-top">
+  <div class="wrap grid g2">
+    <div class="glass card reveal">
+      <p class="eyebrow">Path</p>
+      <ul class="timeline">
+        <li><b>Today</b> — Co-founder & Chief Innovation Officer of a multi-site industrial manufacturing group: data platform, automation, AI agents, ERP strategy, EU expansion. Founder of CRO Accelerate.</li>
+        <li><b>CCO</b> — commercial leadership for technology and marketing services companies serving the US and EU.</li>
+        <li><b>COO / CRO</b> — operations and revenue for a science-driven technology company.</li>
+        <li><b>12 years</b> — Director of Marketing & Business Development at a large IT services company; built and led a 28-person sales and marketing team across US and EU markets.</li>
+        <li><b>Research</b> — doctoral studies; scientific publications on digital transformation.</li>
+      </ul>
+    </div>
+    <div class="glass card reveal">
+      <p class="eyebrow">How I work</p>
+      <ul class="check">
+        <li><b>Outcome over output.</b> Every initiative has a KPI and an owner before it starts.</li>
+        <li><b>Build, don't just advise.</b> I write the first pipelines, dashboards and agents myself.</li>
+        <li><b>Your accounts, your IP.</b> Code, prompts and data stay in your infrastructure.</li>
+        <li><b>Privacy by design.</b> No personal or financial data in shared views. NDA by default.</li>
+        <li><b>Honest numbers.</b> Anomalies are flagged, not smoothed. Measure first, claim later.</li>
+        <li><b>Leave a team behind.</b> Documentation and internal champions, so the system survives me.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sp-top">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Toolbox</p><h2>Technology I use every week</h2></div>
+    <div class="glass reveal" style="padding:24px">
+      <ul class="tags">
+        {% for t in ["Claude & GPT APIs","AI agents & orchestration","Python","GitHub Actions","Google Apps Script","Google Workspace","BigQuery / PostgreSQL","GA4 & Tag Manager","Google Ads & Meta Ads","Bitrix24, HubSpot, Pipedrive","Odoo & ERP selection","Cloudflare","WordPress","Looker Studio","REST APIs & webhooks"] %}<li>{{ t }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{{ cta_band(cfg, id="about_band") }}
+{% endblock %}

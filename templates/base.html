@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">{% endif %}
+<meta name="theme-color" content="#070b14">
+<meta property="og:type" content="{{ page.og_type or 'website' }}">
+<meta property="og:site_name" content="{{ cfg.site_name }}">
+<meta property="og:title" content="{{ page.og_title or page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.canonical }}">
+<meta property="og:image" content="{{ page.og_image }}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.og_title or page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:image" content="{{ page.og_image }}">
+<link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="{{ cfg.site_name }} — Blog" href="/blog/feed.xml">
+
+<!-- Consent Mode v2: denied by default in EEA/UK/CH, restored from the visitor's saved choice -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500,
+ region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});
+gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
+try{var c=localStorage.getItem('cra_consent_v1');if(c){var g=c==='all'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:(c==='all'||c==='analytics')?'granted':'denied'});}}catch(e){}
+window.SITE_CFG={leadEndpoint:{{ cfg.lead_endpoint|tojson }},email:{{ cfg.email|tojson }}};
+dataLayer.push({page_type:{{ page.page_type|tojson }},content_group:{{ page.content_group|tojson }}});
+</script>
+{% if cfg.gtm_id and 'X' not in cfg.gtm_id %}
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ cfg.gtm_id }}');</script>
+{% endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/site.css?v={{ build_id }}">
+{% for s in page.schema %}<script type="application/ld+json">{{ s|tojson }}</script>
+{% endfor %}
+</head>
+<body data-page-type="{{ page.page_type }}">
+{% if cfg.gtm_id and 'X' not in cfg.gtm_id %}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ cfg.gtm_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{% endif %}
+<a class="skip" href="#main">Skip to content</a>
+<div class="aurora" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="{{ cfg.site_name }} — home">
+      <span class="brand-mark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 11.5L7 4l2.3 4.2L11 6l2 5.5" fill="none" stroke="#04211d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>{{ cfg.site_name }}<small>Innovation · AI · Growth</small></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      {% for item in nav %}<li><a href="{{ item.href }}"{% if page.section == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+    <a class="btn btn-primary btn-sm" href="{{ cfg.calendly }}" target="_blank" rel="noopener" data-cta="nav_book_call">Book a call <span class="arr">→</span></a>
+  </nav>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 11.5L7 4l2.3 4.2L11 6l2 5.5" fill="none" stroke="#04211d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>{{ cfg.site_name }}</span></a>
+        <p class="muted" style="margin-top:14px;font-size:.94rem;max-width:34ch">Fractional innovation leadership: AI agents, AI offices, live management data and revenue systems for scaling companies.</p>
+        <p class="muted" style="font-size:.88rem">{{ cfg.location_line }}</p>
+        <div class="social">
+          <a href="{{ cfg.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.86V21H9z"/></svg></a>
+          <a href="{{ cfg.telegram }}" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3l-3.2 15.1c-.24 1.07-.87 1.33-1.77.83l-4.9-3.6-2.36 2.27c-.26.26-.48.48-.98.48l.35-5 9.1-8.22c.4-.35-.09-.55-.61-.2L6.3 13.03l-4.85-1.52c-1.05-.33-1.07-1.05.22-1.56L20.6 2.66c.88-.33 1.65.2 1.3 1.64z"/></svg></a>
+          <a href="mailto:{{ cfg.email }}" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H19.6L12 12.2zM4 9v8h16V9l-8 5.4L4 9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/fractional-chief-innovation-officer/">Fractional Chief Innovation Officer</a></li>
+          <li><a href="/services/ai-agents/">AI Agents</a></li>
+          <li><a href="/services/ai-office/">AI Office</a></li>
+          <li><a href="/services/digital-control-tower/">Digital Control Tower</a></li>
+          <li><a href="/services/revenue-engine/">Revenue Engine / Fractional CCO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Proof</h4>
+        <ul>
+          {% for c in cases %}<li><a href="/cases/{{ c.slug }}/">{{ c.short }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Oleg</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/ai-readiness/">AI Readiness Scorecard</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© {{ year }} {{ cfg.site_name }} · {{ cfg.owner_name }}</span>
+      <span><a href="/privacy/">Privacy</a> · <a href="#" data-open-consent>Cookie settings</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie" role="dialog" aria-live="polite" aria-label="Cookie preferences">
+  <strong style="color:var(--ink)">Cookies, briefly.</strong> I use analytics to understand which content is useful, and advertising cookies only if you allow them. <a href="/privacy/">Privacy policy</a>.
+  <div class="btn-row">
+    <button class="btn btn-primary btn-sm" data-consent="all">Accept all</button>
+    <button class="btn btn-glass btn-sm" data-consent="analytics">Analytics only</button>
+    <button class="btn btn-glass btn-sm" data-consent="none">Reject</button>
+  </div>
+</div>
+
+<a class="btn btn-primary sticky-cta" href="{{ cfg.calendly }}" target="_blank" rel="noopener" data-cta="sticky_mobile">Book a call →</a>
+<script src="/static/js/site.js?v={{ build_id }}" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

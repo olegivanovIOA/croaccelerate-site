@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta_band %}
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Blog{% if category %} / {{ category.name }}{% endif %}</nav>
+    <div class="sec-head">
+      <p class="eyebrow">Insights</p>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">{% if category %}{{ category.name }}{% else %}Notes on AI, data <span class="serif grad">& growth</span>{% endif %}</h1>
+      <p class="lead">{% if category and category.description %}{{ category.description }}{% else %}Practical writing from building AI agents, live dashboards and revenue systems inside a fast-growing company. No hype — what worked, what didn't, and the numbers.{% endif %}</p>
+    </div>
+    {% if categories %}
+    <div class="tags" style="margin-bottom:28px">
+      <a class="btn btn-glass btn-sm" href="/blog/"{% if not category %} aria-current="page"{% endif %}>All</a>
+      {% for c in categories %}<a class="btn btn-glass btn-sm" href="/blog/category/{{ c.slug }}/">{{ c.name }}</a>{% endfor %}
+    </div>
+    {% endif %}
+    {% if posts %}
+    <div class="grid g3">
+      {% for p in posts %}
+      <a class="glass post-card card-link reveal" href="/blog/{{ p.slug }}/">
+        <div class="cover">{% if p.image %}<img src="{{ p.image }}" alt="{{ p.image_alt }}" loading="lazy">{% endif %}</div>
+        <span class="muted" style="font-size:.82rem">{{ p.date_human }} · {{ p.read_min }} min read</span>
+        <h2 style="font-size:1.25rem;margin-top:6px">{{ p.title }}</h2>
+        <p>{{ p.excerpt }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    {% if pager %}
+    <div class="btn-row" style="justify-content:space-between">
+      {% if pager.prev %}<a class="btn btn-glass" href="{{ pager.prev }}">← Newer</a>{% else %}<span></span>{% endif %}
+      {% if pager.next %}<a class="btn btn-glass" href="{{ pager.next }}">Older →</a>{% endif %}
+    </div>
+    {% endif %}
+    {% else %}
+    <div class="glass card"><h2 style="font-size:1.4rem">First articles are on their way.</h2><p>Follow on <a href="{{ cfg.linkedin }}" target="_blank" rel="noopener" style="color:#8ff5e7">LinkedIn</a> meanwhile.</p></div>
+    {% endif %}
+  </div>
+</section>
+{{ cta_band(cfg, id="blog_index") }}
+{% endblock %}
