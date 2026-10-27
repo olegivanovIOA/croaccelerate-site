@@ -639,3 +639,48 @@ body{background:var(--bg-0);color:var(--ink)}
 .dash>figcaption{color:var(--muted)}
 
 .site-footer{background:transparent}
+
+/* =================================================================
+   LIGHT GLASS (Oct 27, v4): iOS-style frosted glass on a soft, slightly
+   deeper colour field — so the blur has something to show through.
+   ================================================================= */
+:root{
+  --bg-0:#dfe6f1; --bg-1:#e8edf5;
+  --glass-bg:rgba(255,255,255,.55);
+  --glass-bg-2:rgba(255,255,255,.72);
+  --glass-edge:rgba(255,255,255,.75);
+}
+body{background:var(--bg-0)}
+.aurora{background:
+  radial-gradient(1000px 640px at 0% -6%, #bfe6df 0%, transparent 60%),
+  radial-gradient(900px 600px at 100% 0%, #cfd2f7 0%, transparent 58%),
+  radial-gradient(800px 600px at 60% 100%, #e6d6f6 0%, transparent 60%),
+  linear-gradient(180deg,#e9eef6 0%,#dfe6f1 100%)}
+.aurora .blob{display:block;opacity:.55;filter:blur(70px)}
+.aurora .b1{background:radial-gradient(circle,#5fd6c4 0%,transparent 65%)}
+.aurora .b2{background:radial-gradient(circle,#8f93ff 0%,transparent 65%)}
+.aurora .b3{display:block;opacity:.35;background:radial-gradient(circle,#c39bff 0%,transparent 65%)}
+
+.glass,.nav,.fast,.scope-tile,.metric,.stat,.opt,.step-min,.cookie{
+  background:var(--glass-bg)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);
+  border:1px solid var(--glass-edge)!important;
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 -1px 0 rgba(15,27,45,.04) inset, 0 18px 40px -26px rgba(30,45,90,.45)!important}
+.nav{background:rgba(255,255,255,.6)!important}
+.glass::after{display:block;background:linear-gradient(140deg,rgba(255,255,255,.7),rgba(255,255,255,.08) 35%,rgba(255,255,255,0) 65%,rgba(255,255,255,.35))}
+.step-min{border-radius:var(--r-lg);padding:20px 20px}
+.fast:hover,.card-link:hover{background:var(--glass-bg-2)!important}
+.btn-glass,.btn-ghost{background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-color:rgba(255,255,255,.8)}
+.rows .row{border-color:rgba(15,27,45,.09)}
+.faq details,.faq-item{background:var(--glass-bg);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+@media (prefers-reduced-transparency:reduce){
+  .glass,.nav,.fast,.scope-tile,.metric,.stat,.opt,.step-min,.cookie{background:#fff!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+/* dark screens stay solid */
+.dash-win,.dg-wrap{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.glass::before{display:block;background:radial-gradient(420px circle at var(--mx,30%) var(--my,0%),rgba(255,255,255,.55),transparent 45%)}
+.glass.dash-win{background:linear-gradient(180deg,#1b2740,#141e33)!important;border:1px solid rgba(15,27,45,.25)!important;
+  box-shadow:0 24px 50px -28px rgba(15,27,45,.6)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.glass.dash-win::before,.glass.dash-win::after{display:none}
+.dash-win .metric,.dash-win .stat{background:rgba(255,255,255,.05)!important;border-color:rgba(255,255,255,.12)!important;box-shadow:none!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+.portrait{padding:0;background:transparent;border:1px solid rgba(255,255,255,.8);box-shadow:0 18px 40px -24px rgba(30,45,90,.5)}
