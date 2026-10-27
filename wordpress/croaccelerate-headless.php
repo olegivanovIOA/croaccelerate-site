@@ -8,9 +8,10 @@
  * Version: 2.0
  * Author: CRO Accelerate
  *
- * INSTALL: upload this file to wp-content/mu-plugins/ (create the folder if it does not exist).
+ * INSTALL: the GitHub deploy workflow uploads this file to wp-content/mu-plugins/ automatically.
+ *          To remove it: GitHub → Settings → Variables → CRA_PLUGIN = off, then re-run Deploy.
  * CONFIG (wp-config.php, above "That's all, stop editing!"):
- *   define('CRA_STATIC_HOME', true);                       // serve the new static home page at "/"
+ *   (optional) define('CRA_STATIC_HOME', false);           // show the old WordPress home page instead of the new one
  *   define('CRA_GH_REPO',  'olegivanovIOA/croaccelerate-site');
  *   define('CRA_GH_TOKEN', 'github_pat_...');              // fine-grained token: this repo only, Contents: Read & write
  * Remove CRA_STATIC_HOME (or set false) to instantly show the old WordPress home page again — the safety switch.
@@ -42,7 +43,7 @@ add_action('template_redirect', function () {
     if ($path === '//') $path = '/';
 
     // static home page
-    if ($path === '/' && defined('CRA_STATIC_HOME') && CRA_STATIC_HOME) {
+    if ($path === '/' && (!defined('CRA_STATIC_HOME') || CRA_STATIC_HOME)) {
         if (cra_serve_static('index.html')) return;
     }
 
