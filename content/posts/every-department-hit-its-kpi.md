@@ -1,7 +1,7 @@
 ---
 title: Every Department Hit Its KPI. The Company Missed Its Number.
 slug: every-department-hit-its-kpi
-date: 2026-10-27
+date: 2026-10-25
 seo_title: Why Departmental KPIs Fail the Business — and How to Fix the Seams
 description: When every team hits its KPI but the company misses its target, the problem sits between departments. How to find value leaks at the seams and fix them with shared live data.
 excerpt: Procurement saves, marketing delivers leads, production hits output — and the business still misses. The problem is rarely people. It is the seams between functions.

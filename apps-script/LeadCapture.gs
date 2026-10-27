@@ -11,7 +11,7 @@
  *       AUTO_REPLY    = "yes" to send a short confirmation to the lead (optional)
  *  3. Run setup() once (authorise).
  *  4. Deploy → New deployment → Web app → Execute as: Me, Who has access: Anyone → copy the /exec URL
- *     into site.config.json "lead_endpoint" (or env LEAD_ENDPOINT on Cloudflare Pages).
+ *     into GitHub → Settings → Secrets and variables → Actions → Variables → LEAD_ENDPOINT, then re-run Deploy.
  *  5. After editing this script: Deploy → Manage deployments → Edit → Version: New version (URL stays the same).
  */
 

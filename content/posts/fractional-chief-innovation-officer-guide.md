@@ -1,8 +1,8 @@
 ---
 title: What a Fractional Chief Innovation Officer Does — and When Your Company Needs One
 slug: fractional-chief-innovation-officer-guide
-date: 2026-10-27
-seo_title: Fractional Chief Innovation Officer: Role, Scope & When to Hire (2026 Guide)
+date: 2026-10-23
+seo_title: Fractional Chief Innovation Officer: Role & When to Hire
 description: A practical guide to the Fractional Chief Innovation Officer role: what they own, how it differs from an AI agency or CIO, typical first 90 days, and signs your company needs one.
 excerpt: Most mid-market companies don't need a full-time innovation executive. They do need someone who owns AI and digital operations. Here's what that role looks like in practice.
 status: publish

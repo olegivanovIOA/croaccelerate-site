@@ -331,11 +331,11 @@ SIMPLE_PAGES = {
 
 def build_pages(posts):
     home_schema = [org_schema(), person_schema(), website_schema(), faq_schema(C.HOME_FAQ)]
-    render("home.html", "/", page_ctx("/", "Fractional Chief Innovation Officer — AI Agents, AI Office & Growth | CRO Accelerate",
+    render("home.html", "/", page_ctx("/", "Fractional Chief Innovation Officer & AI Agents | CRO Accelerate",
                                       "Oleg Ivanov is a Fractional Chief Innovation Officer for scaling companies in the EU, UK and US: AI strategy, AI agents, AI offices, live KPI dashboards and revenue systems.",
                                       "home", "home", schema=home_schema), priority="1.0", posts=posts)
 
-    render("listing.html", "/services/", page_ctx("/services/", "Services — Fractional CINO, AI Agents, AI Office | CRO Accelerate",
+    render("listing.html", "/services/", page_ctx("/services/", "Services: Fractional CINO, AI Agents | CRO Accelerate",
                                                   "Fractional Chief Innovation Officer, AI agents, chatbots in 2–3 days, AI Office, AI project assistants, Digital Control Tower dashboards and Revenue Engine / Fractional CCO.",
                                                   "services", "services", eyebrow="Services", h1="Services", h1_em="one accountable owner",
                                                   lead="Seven connected services. Start with a diagnostic or a fast build; scale what proves itself.",
@@ -359,7 +359,7 @@ def build_pages(posts):
                                               schema=[svc, faq_schema(s["faq"]), crumbs_schema([("Home", "/"), ("Services", "/services/"), (s["short"], path)])],
                                               content_group="service"), priority="0.9", s=s, related=related)
 
-    render("listing.html", "/cases/", page_ctx("/cases/", "Case Studies — AI, Data & Revenue Transformation | CRO Accelerate",
+    render("listing.html", "/cases/", page_ctx("/cases/", "Case Studies: AI, Data & Revenue | CRO Accelerate",
                                                "Anonymised case studies: live management dashboards, a multi-agent AI Office, closed-loop marketing attribution, multi-entity finance automation and market intelligence for EU expansion.",
                                                "cases", "cases", eyebrow="Cases", h1="Case studies", h1_em="built from zero",
                                                lead="Five anonymised stories — from scaling a multi-site manufacturing group to running our own AI Office. The same playbook we bring to clients.",
@@ -372,10 +372,10 @@ def build_pages(posts):
                                            schema=[art, crumbs_schema([("Home", "/"), ("Cases", "/cases/"), (c["short"], path)])], content_group="case"),
                priority="0.8", c=c, others=[o for o in C.CASES if o is not c][:2])
 
-    render("about.html", "/about/", page_ctx("/about/", "About Oleg Ivanov — Fractional Chief Innovation Officer | CRO Accelerate",
+    render("about.html", "/about/", page_ctx("/about/", "About Oleg Ivanov & Team | CRO Accelerate",
                                              "20+ years in technology and B2B growth: IT services business development, CCO and COO/CRO roles, and co-founder & CINO of a manufacturing group.",
                                              "about", "about", schema=[person_schema(), crumbs_schema([("Home", "/"), ("About", "/about/")])]), priority="0.7")
-    render("contact.html", "/contact/", page_ctx("/contact/", "Contact — Book a Call with a Fractional CINO | CRO Accelerate",
+    render("contact.html", "/contact/", page_ctx("/contact/", "Contact & Book a Call | CRO Accelerate",
                                                  "Book a 30-minute call or send a message about AI agents, an AI Office, live KPI dashboards or revenue systems. Reply within one business day.",
                                                  "contact", "contact"), priority="0.8")
     render("ai_readiness.html", "/ai-readiness/", page_ctx("/ai-readiness/", "AI Readiness Scorecard (Free, 4 Minutes) | CRO Accelerate",

@@ -578,3 +578,64 @@ h2{max-width:44ch}
 .dg .note{fill:#7f8ba3;font-size:11px;font-style:italic}
 .dg-wrap figcaption{margin-top:10px;font-size:.85rem;color:#8f9bb3}
 @media(max-width:820px){.dg-wrap figcaption::after{content:" — scroll sideways";}}
+
+/* =================================================================
+   LIGHT THEME (Oct 27, v3): light background, dark ink, white cards.
+   The dashboard mock and case diagrams stay as dark "screens".
+   ================================================================= */
+:root{
+  --bg-0:#eef2f7; --bg-1:#f6f8fb; --bg-2:#ffffff;
+  --ink:#0f1b2d; --ink-2:#334155; --muted:#5b6b82;
+  --line:rgba(15,27,45,.10); --line-strong:rgba(15,27,45,.18);
+  --teal:#0f9f8f; --indigo:#4f46e5; --violet:#7c3aed;
+  --glass:#ffffff; --glass-2:#ffffff; --glass-strong:#ffffff; --glass-solid:#ffffff;
+  --shadow:0 12px 32px -18px rgba(15,27,45,.25);
+  --hi:none;
+  color-scheme:light;
+}
+body{background:var(--bg-0);color:var(--ink)}
+.aurora{background:
+  radial-gradient(1100px 600px at 6% -10%, #d9efec 0%, transparent 60%),
+  radial-gradient(900px 560px at 100% 4%, #e3e5fb 0%, transparent 55%),
+  linear-gradient(180deg,#f6f8fb 0%,#eef2f7 100%)}
+.aurora .blob,.aurora .grain{display:none}
+.glass{background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px -22px rgba(15,27,45,.35)}
+.glass::before,.glass::after{display:none}
+.nav{background:rgba(255,255,255,.82);border-color:var(--line);box-shadow:0 6px 20px -14px rgba(15,27,45,.3)}
+.nav ul a:hover,.nav ul a[aria-current="page"]{background:rgba(15,27,45,.06)}
+.nav-toggle,.btn-glass,.pill,.stat,.tags li,.metric,.opt,.social a,.scope-tile,.fast,.dk,.dc{background:#fff;border-color:var(--line)}
+.btn-glass:hover,.opt:hover{background:#f3f6fa}
+.btn-ghost{color:var(--ink);border-color:var(--line-strong)}
+.btn-primary{color:#fff;background:linear-gradient(180deg,#14b8a6,#0f9488);box-shadow:0 10px 24px -12px rgba(15,148,136,.7)}
+.btn-primary:hover{box-shadow:0 14px 30px -12px rgba(15,148,136,.85)}
+.brand-mark{box-shadow:none}
+.pill b,.badge.teal{background:rgba(15,159,143,.12);color:#0b7a6e}
+.badge{background:rgba(124,58,237,.10);color:#5b21b6}
+.badge.gold{background:rgba(217,119,6,.12);color:#92400e}
+.card .more,.prose a,.cookie a,.form-msg.ok{color:#0b7a6e}
+.card .more:hover{color:#065f56}
+.form-msg.err{color:#b4233c}
+.metric b,.scope-tile b{color:var(--ink)}
+.site-footer{border-top:1px solid var(--line)}
+.site-footer a:hover{color:var(--ink)}
+.progress,.dim .bar{background:rgba(15,27,45,.08)}
+.prose blockquote{background:#fff}
+.row:hover{background:rgba(15,27,45,.03)}
+.hero-photo .mono{background:#fff}
+.field input,.field select,.field textarea{background:#fff;color:var(--ink);border-color:var(--line-strong)}
+.cookie{background:#fff!important;color:var(--ink)}
+.grad{background:linear-gradient(100deg,#0f9f8f 0%,#4f46e5 60%,#7c3aed 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{color:#0b7a6e}
+.dot{background:#14b8a6}
+
+/* dark "screens": dashboard mock + diagrams keep their dark palette */
+.dash-win,.dg-wrap{
+  --ink:#eef2f8; --ink-2:#c3cbd9; --muted:#93a0b6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.22);
+  background:linear-gradient(180deg,#1b2740,#141e33)!important;color:var(--ink);
+  border:1px solid rgba(15,27,45,.25)!important;box-shadow:0 24px 50px -28px rgba(15,27,45,.6)!important}
+.dash-win .dk,.dash-win .dc{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.dg-wrap figcaption{color:#93a0b6}
+.dash>figcaption{color:var(--muted)}
+
+.site-footer{background:transparent}
