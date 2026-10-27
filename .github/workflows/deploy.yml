@@ -36,8 +36,10 @@ jobs:
           grep -q "application/ld+json" dist/index.html
           echo "pages in sitemap: $(grep -o '<loc>' dist/sitemap.xml | wc -l)"
 
-      - name: Install lftp
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: Install lftp + check the WordPress bridge plugin syntax
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp php-cli
+          php -l wordpress/croaccelerate-headless.php
 
       - name: Upload by SFTP (only our folders are mirrored with delete; WordPress files are never touched)
         env:
@@ -46,6 +48,7 @@ jobs:
           USER: ${{ secrets.SFTP_USER }}
           PASS: ${{ secrets.SFTP_PASSWORD }}
           ROOT: ${{ secrets.SFTP_PATH }}
+          CRA_PLUGIN: ${{ vars.CRA_PLUGIN }}
         run: |
           set -e
           if [ -z "$HOST" ]; then echo "::error::SFTP secrets are not set"; exit 1; fi
@@ -66,13 +69,24 @@ jobs:
           for f in index.html 404.html sitemap.xml robots.txt llms.txt redirects.json; do
             CMDS="$CMDS put -O . dist/$f;"
           done
+          # WordPress bridge plugin (new home page, redirects, blog routing). Variable CRA_PLUGIN=off removes it.
+          if [ "$CRA_PLUGIN" = "off" ]; then
+            CMDS="$CMDS rm -f wp-content/mu-plugins/croaccelerate-headless.php;"
+          else
+            CMDS="$CMDS mkdir -p wp-content/mu-plugins; put -O wp-content/mu-plugins wordpress/croaccelerate-headless.php;"
+          fi
           lftp -u "$USER","$PASS" -p "$PORT" "sftp://$HOST" -e "$CMDS bye"
           echo "Uploaded."
 
       - name: Smoke test live site
         run: |
           sleep 5
-          for u in / /services/ /cases/ /blog/ /ai-readiness/; do
+          for u in / /services/ /cases/ /blog/ /ai-readiness/ /wp-admin/; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "https://croaccelerate.com$u")
             echo "$u -> $code"
           done
+          if curl -s "https://croaccelerate.com/?nocache=$(date +%s)" | grep -q "operating advantage"; then
+            echo "✅ New home page is live"
+          else
+            echo "::warning::Home page still shows the old version — flush the GoDaddy cache (WP admin → GoDaddy Quick Links → Flush cache)"
+          fi
