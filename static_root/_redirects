@@ -9,6 +9,8 @@
 /revenue-optimization/      /services/revenue-engine/             301
 /hire-developers            /services/                            301
 /hire-developers/           /services/                            301
+/manufacturing               /cases/manufacturing-group-control-tower/  301
+/manufacturing/             /cases/manufacturing-group-control-tower/  301
 /industries                 /cases/                               301
 /industries/*               /cases/                               301
 /partnership                /contact/                             301
