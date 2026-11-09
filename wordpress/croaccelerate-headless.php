@@ -5,7 +5,7 @@
  *              Static files/folders (uploaded by GitHub Actions) are served directly by the web server; requests
  *              that reach WordPress are handled here: static home page, old-URL redirects, posts → /blog/<slug>/,
  *              static 404, and a GitHub rebuild trigger when a post is published or updated.
- * Version: 2.1
+ * Version: 2.2
  * Author: CRO Accelerate
  *
  * INSTALL: the GitHub deploy workflow uploads this file to wp-content/mu-plugins/ automatically.
@@ -41,6 +41,15 @@ add_action('template_redirect', function () {
 
     $path = '/' . trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/') . '/';
     if ($path === '//') $path = '/';
+
+    // home page with junk query strings left by the old theme/plugins (e.g. ?coblocks_pattern_category=portfolio)
+    // -> clean 301 to "/"; marketing parameters (utm_*, gclid, fbclid, li_fat_id, msclkid, ref) stay untouched
+    if ($path === '/' && !empty($_GET)) {
+        $junk = array_filter(array_keys($_GET), function ($k) {
+            return !preg_match('/^(utm_[a-z_]+|gclid|gbraid|wbraid|fbclid|li_fat_id|msclkid|ref|cra_wp)$/i', $k);
+        });
+        if ($junk) { wp_redirect(home_url('/'), 301); exit; }
+    }
 
     // static home page
     if ($path === '/' && (!defined('CRA_STATIC_HOME') || CRA_STATIC_HOME)) {

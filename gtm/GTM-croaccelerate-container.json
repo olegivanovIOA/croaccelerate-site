@@ -614,7 +614,8 @@
         "firingTriggerId": [
           "21"
         ],
-        "tagFiringOption": "ONCE_PER_EVENT"
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "paused": true
       },
       {
         "accountId": "0",
@@ -662,7 +663,8 @@
         "firingTriggerId": [
           "23"
         ],
-        "tagFiringOption": "ONCE_PER_EVENT"
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "paused": true
       },
       {
         "accountId": "0",
@@ -697,7 +699,8 @@
               }
             ]
           }
-        }
+        },
+        "paused": true
       },
       {
         "accountId": "0",
@@ -732,7 +735,8 @@
               }
             ]
           }
-        }
+        },
+        "paused": true
       }
     ],
     "trigger": [
